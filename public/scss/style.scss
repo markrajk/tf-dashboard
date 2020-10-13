@@ -1126,6 +1126,7 @@ body {
     height: 5.4em;
     background-color: #fff;
     border-bottom: 1px solid #e4e8ec;
+    z-index: 50;
 
     &-list {
       height: 100%;
@@ -1185,18 +1186,33 @@ body {
           visibility: hidden;
         }
 
-        &.active::after {
-          content: "";
+        // &.active::after {
+        //   content: "";
+        //   position: absolute;
+        //   bottom: -1.8em;
+        //   left: 50%;
+        //   transform: translate(-50%, 0);
+        //   display: block;
+        //   width: 21px;
+        //   height: 14px;
+        //   background-color: #fff;
+        //   -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        //   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        // }
+
+        & svg {
+          display: none;
           position: absolute;
-          bottom: -1.8em;
+          bottom: -2.1em;
           left: 50%;
           transform: translate(-50%, 0);
+          width: 2.3em;
+          height: 1.5em;
+          z-index: 0;
+        }
+
+        &.active svg {
           display: block;
-          width: 21px;
-          height: 14px;
-          background-color: #fff;
-          -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
       }
     }
@@ -1209,6 +1225,7 @@ body {
     border-radius: 6px;
     border: solid 1px #e4e8ec;
     background-color: #ffffff;
+    z-index: 100;
 
     &-list {
       height: 100%;
