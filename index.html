@@ -96,6 +96,7 @@
     
 
     <script>
+        //HEADER SMALL/BIG TOGGLE
         let header = document.querySelector('.header');
         let headerMain = document.querySelector('.header-main');
 
@@ -104,6 +105,15 @@
             header.classList.toggle('small')
         });
 
+        //ACTIVE LINK
+        let headerNavLinks = document.querySelectorAll('.header-nav-list-item');
+
+        headerNavLinks.forEach(e => {
+            e.addEventListener('click', function() {
+                headerNavLinks.forEach(x => x.classList.remove('active'));
+                this.classList.add('active')
+            })
+        })
     </script>
 </body>
 </html>
