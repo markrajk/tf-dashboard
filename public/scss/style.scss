@@ -1136,6 +1136,11 @@ body {
       list-style: none;
 
       &-item {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        height: 100%;
+        position: relative;
         cursor: pointer;
 
         &:not(:last-of-type) {
@@ -1172,6 +1177,84 @@ body {
           color: #000;
         }
         &.active .header-nav-list-item-text::before {
+          display: block;
+          content: attr(text);
+          font-weight: 600;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
+        }
+
+        &.active::after {
+          content: "";
+          position: absolute;
+          bottom: -1.8em;
+          left: 50%;
+          transform: translate(-50%, 0);
+          display: block;
+          width: 21px;
+          height: 14px;
+          background-color: #fff;
+          -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+      }
+    }
+  }
+
+  &-sub-nav {
+    margin: 1.6em 4.4em 0;
+    padding: 0 2.5em;
+    height: 52px;
+    border-radius: 6px;
+    border: solid 1px #e4e8ec;
+    background-color: #ffffff;
+
+    &-list {
+      height: 100%;
+      width: 100%;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(flex-start);
+      list-style: none;
+
+      &-item {
+        cursor: pointer;
+
+        &:not(:last-of-type) {
+          margin-right: 3.6em;
+        }
+
+        &-text {
+          font-size: 12.8px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.18;
+          letter-spacing: normal;
+          text-align: left;
+          color: #404040;
+          text-align: center;
+        }
+
+        //on hover remove shake when changing weight
+        &:hover .header-sub-nav-list-item-text {
+          font-weight: 500;
+        }
+        & .header-sub-nav-list-item-text::before {
+          display: block;
+          content: attr(text);
+          font-weight: 500;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
+        }
+
+        &.active .header-sub-nav-list-item-text {
+          font-weight: 600;
+          color: #000;
+        }
+        &.active .header-sub-nav-list-item-text::before {
           display: block;
           content: attr(text);
           font-weight: 600;
