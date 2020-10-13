@@ -1121,6 +1121,67 @@ body {
     }
   }
 
+  &-nav {
+    padding: 0 4.4em;
+    height: 5.4em;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e8ec;
+
+    &-list {
+      height: 100%;
+      width: 100%;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(flex-start);
+      list-style: none;
+
+      &-item {
+        cursor: pointer;
+
+        &:not(:last-of-type) {
+          margin-right: 3.6em;
+        }
+
+        &-text {
+          font-size: 12.8px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.18;
+          letter-spacing: normal;
+          text-align: left;
+          color: #404040;
+        }
+
+        //on hover remove shake when changing weight
+        &:hover .header-nav-list-item-text {
+          font-weight: 600;
+        }
+        & .header-nav-list-item-text::before {
+          display: block;
+          content: attr(text);
+          font-weight: 600;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
+        }
+
+        &.active .header-nav-list-item-text {
+          font-weight: 600;
+          color: #000;
+        }
+        &.active .header-nav-list-item-text::before {
+          display: block;
+          content: attr(text);
+          font-weight: 600;
+          height: 0;
+          overflow: hidden;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
   &.small {
     padding-top: 0;
 
