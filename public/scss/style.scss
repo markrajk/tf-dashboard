@@ -1151,16 +1151,17 @@ body {
           letter-spacing: normal;
           text-align: left;
           color: #404040;
+          text-align: center;
         }
 
         //on hover remove shake when changing weight
         &:hover .header-nav-list-item-text {
-          font-weight: 600;
+          font-weight: 500;
         }
         & .header-nav-list-item-text::before {
           display: block;
           content: attr(text);
-          font-weight: 600;
+          font-weight: 500;
           height: 0;
           overflow: hidden;
           visibility: hidden;

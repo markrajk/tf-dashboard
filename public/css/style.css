@@ -494,13 +494,14 @@ body {
           line-height: 1.18;
           letter-spacing: normal;
           text-align: left;
-          color: #404040; }
+          color: #404040;
+          text-align: center; }
         .header-nav-list-item:hover .header-nav-list-item-text {
-          font-weight: 600; }
+          font-weight: 500; }
         .header-nav-list-item .header-nav-list-item-text::before {
           display: block;
           content: attr(text);
-          font-weight: 600;
+          font-weight: 500;
           height: 0;
           overflow: hidden;
           visibility: hidden; }
