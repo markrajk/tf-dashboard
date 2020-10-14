@@ -1824,6 +1824,202 @@ body {
           }
         }
       }
+
+      &.todo-card {
+        padding-bottom: 4em;
+
+        & .content-card-header {
+          margin-bottom: 2.4em;
+        }
+
+        & .content-card-main {
+          & .todo {
+            width: 100%;
+            max-width: 41em;
+
+            &-list {
+              margin-left: 0.3em;
+              width: 100%;
+
+              &-item {
+                position: relative;
+                padding-left: 1.1em;
+                padding-right: 3.4em;
+                @include flexbox();
+                @include align-items(center);
+                @include justify-content(flex-start);
+                height: 6.5em;
+                cursor: pointer;
+                z-index: 10;
+
+                &:first-of-type {
+                  border-top: 1.5px solid #f0f0f0;
+                }
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  display: block;
+                  width: 100%;
+                  border-bottom: 1.5px solid #f0f0f0;
+                  z-index: -2;
+                }
+
+                &:not(:last-of-type) {
+                  //border-bottom: 1.5px solid #f0f0f0;
+                }
+
+                &-icon {
+                  margin-right: emcalc(1.14, 2.5);
+                  @include flexbox();
+                  @include align-items(center);
+                  @include justify-content(center);
+                  width: emcalc(4, 2.5);
+                  height: emcalc(4, 2.5);
+                  background-color: #007aff;
+                  border-radius: 50%;
+                  font-size: 2.5em;
+                  color: #fff;
+                }
+
+                &-img {
+                  margin-right: 1.14em;
+                  width: 4em;
+                  height: 4em;
+                  border-radius: 50%;
+                }
+
+                &-initials {
+                  margin-right: emcalc(1.14, 1.5);
+                  @include flexbox();
+                  @include align-items(center);
+                  @include justify-content(center);
+                  width: emcalc(4, 1.5);
+                  height: emcalc(4, 1.5);
+                  background-color: #fed745;
+                  border-radius: 50%;
+                  font-size: 1.5em;
+                  font-weight: 700;
+                  letter-spacing: -0.3px;
+                  color: #fff;
+                }
+
+                &-info {
+                  &-subtitle {
+                    margin-bottom: emcalc(0.3, 1.13);
+                    font-size: 1.13em;
+                    font-weight: 500;
+                    letter-spacing: -0.06px;
+                    color: #7c7c7c;
+                  }
+
+                  &-title {
+                    font-size: 1.6em;
+                    font-weight: 500;
+                    letter-spacing: -0.16px;
+                    color: #242936;
+                  }
+                }
+
+                & .icon-chevron-right {
+                  margin-left: auto;
+                  font-size: 1.32em;
+                  color: #bbbac1;
+                }
+
+                &:hover:before {
+                  content: "";
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  display: block;
+                  width: calc(100% + 0.6em);
+                  height: calc(100% + 3px);
+                  border-radius: 5px;
+                  border: solid 1.5px #f0f0f0;
+                  background-color: #f7f7f7;
+                  z-index: -1;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.new-feedback {
+        & .content-card-header {
+          margin-bottom: 2.4em;
+        }
+
+        & .new-feedback-item {
+          padding: 1.2em 2.6em 1.1em 1.6em;
+          @include inline-flex();
+          @include align-items(center);
+          @include justify-content(flex-start);
+          border-radius: 7.5px;
+          box-shadow: 0 3px 6px 0 rgba(234, 234, 234, 0.4);
+          border: solid 1px #e4e8ec;
+          background-color: #ffffff;
+
+          &:not(:last-of-type) {
+            margin-bottom: 1.4em;
+          }
+
+          &-initials {
+            margin-right: emcalc(1.4, 1.8);
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(center);
+            min-width: emcalc(4.5, 1.8);
+            min-height: emcalc(4.5, 1.8);
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: normal;
+            color: #ffffff;
+            border-radius: 50%;
+          }
+
+          &-set {
+            margin-right: auto;
+
+            &-improv {
+              font-size: 1.45em;
+              font-weight: 400;
+              line-height: 1.37;
+              color: var(--color-black);
+
+              &-strong {
+                font-weight: 600;
+              }
+            }
+
+            &-info {
+              font-size: 1.4em;
+              font-weight: 400;
+              color: #989898;
+            }
+          }
+
+          & .more {
+            margin-left: 3em;
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(center);
+            min-width: 2.7em;
+            min-height: 2.7em;
+            background-color: rgba($color: #bababa, $alpha: 0.15);
+            border-radius: 50%;
+
+            & i {
+              font-size: 1.662em;
+              color: #818181;
+            }
+          }
+        }
+      }
     }
   }
 }
