@@ -1663,7 +1663,7 @@ body {
             @include align-items(flex-start);
             @include justify-content(center);
             overflow: hidden;
-            transition: all 0.5s ease-in-out;
+            transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
 
             &.active {
               position: sticky;
@@ -1671,6 +1671,8 @@ body {
               visibility: visible;
               left: 0;
               z-index: 100;
+              transition: opacity 0.7s ease-in-out 0.3s,
+                visibility 0.7s ease-in-out 0.3s;
             }
 
             & .person {
@@ -1682,12 +1684,12 @@ body {
               @include justify-content(center);
 
               &-main {
-                margin-bottom: 0.7em;
+                margin-bottom: 0.6em;
                 position: relative;
 
                 &-img {
-                  width: 8em;
-                  height: 8em;
+                  width: 7.25em;
+                  height: 7.25em;
                   object-fit: contain;
                   border-radius: 16px;
                 }
@@ -1734,10 +1736,10 @@ body {
                 text-overflow: ellipsis;
 
                 &-name {
-                  margin-bottom: emcalc(0.3, 1.25);
-                  font-size: 1.25em;
+                  margin-bottom: emcalc(0.15, 1.15);
+                  font-size: 1.15em;
                   font-weight: 500;
-                  color: #172b4d;
+                  color: #13284a;
                   white-space: nowrap;
                   overflow: hidden;
                   text-overflow: ellipsis;
@@ -1745,7 +1747,7 @@ body {
 
                 &-position {
                   padding: 0 1em;
-                  font-size: 1.15em;
+                  font-size: 1.05em;
                   font-weight: 400;
                   letter-spacing: -0.03px;
                   color: #7a869a;

@@ -59,11 +59,11 @@ peopleSlidesTriggers.forEach((e,i,arr) => {
         let currentIndex = parseInt(activeSlide.getAttribute("slide").split("-")[1]);
 
         if(this.classList.contains('right')) {
-            activeSlide.style.animation = "slide-out-left .5s ease-in-out";
+            activeSlide.style.animation = "slide-out-left .7s ease-in-out";
             activeSlide.classList.remove("active");
             //console.log(peopleSlides[currentIndex])
             peopleSlides[currentIndex].classList.add("active");
-            peopleSlides[currentIndex].style.animation = "slide-in-left .5s ease-in-out";
+            peopleSlides[currentIndex].style.animation = "slide-in-left .7s ease-in-out";
 
             activeSlide = peopleSlides[currentIndex];
             currentIndex = parseInt(activeSlide.getAttribute("slide").split("-")[1]);
@@ -76,11 +76,11 @@ peopleSlidesTriggers.forEach((e,i,arr) => {
 
         }else {
             console.log(activeSlide, currentIndex, peopleSlides.length)
-            activeSlide.style.animation = "slide-out-right .5s ease-in-out";
+            activeSlide.style.animation = "slide-out-right .7s ease-in-out";
             activeSlide.classList.remove("active");
             //console.log(peopleSlides[currentIndex])
             peopleSlides[currentIndex -2].classList.add("active");
-            peopleSlides[currentIndex -2].style.animation = "slide-in-right .5s ease-in-out";
+            peopleSlides[currentIndex -2].style.animation = "slide-in-right .7s ease-in-out";
 
             activeSlide = peopleSlides[currentIndex -2];
             currentIndex = parseInt(activeSlide.getAttribute("slide").split("-")[1]);
