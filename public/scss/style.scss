@@ -2,6 +2,7 @@
 // ==================================
 // MIXINS & FUNCTIONS
 // ==================================
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 @mixin custom-respond($value) {
   @media (max-width: $value * 1px) {
@@ -120,7 +121,7 @@
 
 //Header H1
 @mixin header-h1($size: 2.5em) {
-  font-weight: 600;
+  font-family: "Inter-Semibold";
   font-size: $size;
   color: #212121;
   letter-spacing: -0.56px;
@@ -128,7 +129,7 @@
 
 //Header H2
 @mixin header-h2($size: 2.4em) {
-  font-weight: 500;
+  font-family: "Inter-Medium";
   font-size: $size;
   color: #172b4d;
   letter-spacing: -0.12px;
@@ -136,7 +137,7 @@
 
 //Header H3
 @mixin header-h3($size: 2.25em) {
-  font-weight: 600;
+  font-family: "Inter-Semibold";
   font-size: $size;
   color: #1a1a1a;
   letter-spacing: -0.11px;
@@ -144,7 +145,7 @@
 
 //Header H4
 @mixin header-h4($size: 2em) {
-  font-weight: 600;
+  font-family: "Inter-Semibold";
   font-size: $size;
   color: #172b4d;
   letter-spacing: normal;
@@ -152,7 +153,7 @@
 
 //Header H5
 @mixin header-h5($size: 17.5em) {
-  font-weight: 600;
+  font-family: "Inter-Semibold";
   font-size: $size;
   color: #000;
   letter-spacing: normal;
@@ -160,7 +161,7 @@
 
 //Header H6
 @mixin header-h6($size: 14.25em) {
-  font-weight: 600;
+  font-family: "Inter-Semibold";
   font-size: $size;
   color: #19212f;
   letter-spacing: normal;
@@ -168,7 +169,7 @@
 
 //Subtitle 01
 @mixin subtitle-01($size: 1.3em) {
-  font-weight: 400;
+  font-family: "Inter-Regular";
   font-size: $size;
   color: #62677b;
   letter-spacing: normal;
@@ -176,7 +177,7 @@
 
 //Subtitle 02
 @mixin subtitle-02($size: 1.225em) {
-  font-weight: 400;
+  font-family: "Inter-Regular";
   font-size: $size;
   color: #435365;
   letter-spacing: -0.09px;
@@ -184,7 +185,7 @@
 
 //Body 01
 @mixin body-01($size: 1.275em) {
-  font-weight: 400;
+  font-family: "Inter-Regular";
   font-size: $size;
   color: #1b2733;
   letter-spacing: normal;
@@ -192,7 +193,7 @@
 
 //Body 02
 @mixin body-01($size: 1.2em) {
-  font-weight: 400;
+  font-family: "Inter-Regular";
   font-size: $size;
   color: #2f373e;
   letter-spacing: normal;
@@ -200,7 +201,7 @@
 
 //Navigation links
 @mixin navigation-links($size: 1.28em) {
-  font-weight: 400;
+  font-family: "Inter-Regular";
   font-size: $size;
   color: var(--color-dark-gray);
   letter-spacing: normal;
@@ -208,7 +209,7 @@
 
 //Caption 01
 @mixin body-01($size: 1.13em) {
-  font-weight: 400;
+  font-family: "Inter-Regular";
   font-size: $size;
   color: #434e5a;
   letter-spacing: -0.03px;
@@ -768,6 +769,30 @@
 }
 
 @font-face {
+  font-family: "Inter-Regular";
+  src: url("../fonts/inter/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/inter/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("../fonts/inter/Inter-Medium.woff2") format("woff2"),
+    url("../fonts/inter/Inter-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter-Semibold";
+  src: url("../fonts/inter/Inter-SemiBold.woff2") format("woff2"),
+    url("../fonts/inter/Inter-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../fonts/inter/Inter-Bold.woff2") format("woff2"),
+    url("../fonts/inter/Inter-Bold.woff") format("woff");
+}
+
+@font-face {
   font-family: "dashoard-icons";
   src: url("../fonts/dashoard-icons.eot?7xzlv2");
   src: url("../fonts/dashoard-icons.eot?7xzlv2#iefix")
@@ -1126,7 +1151,7 @@ body {
       width: emcalc(3.5, 1.83);
       height: emcalc(3.5, 1.83);
       font-size: 1.83em;
-      font-weight: 700;
+      font-family: "Inter-Bold";
       letter-spacing: 0.09px;
       color: #ffffff;
       background-color: #ffce00;
@@ -1170,7 +1195,7 @@ body {
         width: 100%;
         height: 100%;
         font-size: 1.48em;
-        font-weight: 400;
+        font-family: "Inter-Regular";
         line-height: 1.15;
         background-color: #f0f1f2;
         border: 0;
@@ -1218,7 +1243,7 @@ body {
 
       &-title {
         font-size: 2.5em;
-        font-weight: 600;
+        font-family: "Inter-Semibold";
         line-height: 1.2;
         letter-spacing: -0.56px;
         color: #ffffff;
@@ -1255,7 +1280,7 @@ body {
 
         &-text {
           font-size: 12.8px;
-          font-weight: normal;
+          font-family: "Inter-Regular";
           font-stretch: normal;
           font-style: normal;
           line-height: 1.18;
@@ -1267,25 +1292,25 @@ body {
 
         //on hover remove shake when changing weight
         &:hover .header-nav-list-item-text {
-          font-weight: 500;
+          font-family: "Inter-Medium";
         }
         & .header-nav-list-item-text::before {
           display: block;
           content: attr(text);
-          font-weight: 500;
+          font-family: "Inter-Medium";
           height: 0;
           overflow: hidden;
           visibility: hidden;
         }
 
         &.active .header-nav-list-item-text {
-          font-weight: 600;
+          font-family: "Inter-Semibold";
           color: #000;
         }
         &.active .header-nav-list-item-text::before {
           display: block;
           content: attr(text);
-          font-weight: 600;
+          font-family: "Inter-Semibold";
           height: 0;
           overflow: hidden;
           visibility: hidden;
@@ -1349,7 +1374,7 @@ body {
 
         &-text {
           font-size: 12.8px;
-          font-weight: normal;
+          font-family: "Inter-Regular";
           font-stretch: normal;
           font-style: normal;
           line-height: 1.18;
@@ -1361,25 +1386,25 @@ body {
 
         //on hover remove shake when changing weight
         &:hover .header-sub-nav-list-item-text {
-          font-weight: 500;
+          font-family: "Inter-Medium";
         }
         & .header-sub-nav-list-item-text::before {
           display: block;
           content: attr(text);
-          font-weight: 500;
+          font-family: "Inter-Medium";
           height: 0;
           overflow: hidden;
           visibility: hidden;
         }
 
         &.active .header-sub-nav-list-item-text {
-          font-weight: 600;
+          font-family: "Inter-Semibold";
           color: #000;
         }
         &.active .header-sub-nav-list-item-text::before {
           display: block;
           content: attr(text);
-          font-weight: 600;
+          font-family: "Inter-Semibold";
           height: 0;
           overflow: hidden;
           visibility: hidden;
@@ -1483,7 +1508,7 @@ body {
 
         &-title {
           font-size: 2.25em;
-          font-weight: 600;
+          font-family: "Inter-Semibold";
           letter-spacing: -0.17px;
           color: var(--color-black);
         }
@@ -1515,7 +1540,7 @@ body {
           width: 100%;
           height: 100%;
           font-size: 1.4em;
-          font-weight: 400;
+          font-family: "Inter-Regular";
           letter-spacing: -0.07px;
           border-radius: 6px;
           box-shadow: 0 3px 6px 0 rgba(206, 206, 206, 0.16);
@@ -1556,7 +1581,7 @@ body {
 
           &-subtitle {
             font-size: 1.29em;
-            font-weight: 500;
+            font-family: "Inter-Medium";
             line-height: 1.17;
             color: #ffffff;
           }
@@ -1564,7 +1589,7 @@ body {
           &-title {
             margin-bottom: emcalc(1.2, 2);
             font-size: 2em;
-            font-weight: 600;
+            font-family: "Inter-Semibold";
             letter-spacing: -0.1px;
             color: #ffffff;
           }
@@ -1721,7 +1746,7 @@ body {
 
                   & .ok {
                     font-size: 1.2em;
-                    font-weight: 700;
+                    font-family: "Inter-Bold";
                     letter-spacing: -0.24px;
                     color: #ff8900;
                   }
@@ -1738,7 +1763,7 @@ body {
                 &-name {
                   margin-bottom: emcalc(0.15, 1.15);
                   font-size: 1.15em;
-                  font-weight: 500;
+                  font-family: "Inter-Medium";
                   color: #13284a;
                   white-space: nowrap;
                   overflow: hidden;
@@ -1748,7 +1773,7 @@ body {
                 &-position {
                   padding: 0 1em;
                   font-size: 1.05em;
-                  font-weight: 400;
+                  font-family: "Inter-Regular";
                   letter-spacing: -0.03px;
                   color: #7a869a;
                   white-space: nowrap;
@@ -1794,7 +1819,7 @@ body {
 
               &-title {
                 font-size: 1.43em;
-                font-weight: 600;
+                font-family: "Inter-Semibold";
                 line-height: 1.19;
                 letter-spacing: -0.04px;
                 color: #313c4b;
@@ -1802,7 +1827,7 @@ body {
 
               &-amount {
                 font-size: 1.43em;
-                font-weight: 600;
+                font-family: "Inter-Semibold";
                 line-height: 1.19;
                 color: #24a238;
               }
@@ -1872,36 +1897,36 @@ body {
                 }
 
                 &-icon {
-                  margin-right: emcalc(1.14, 2.5);
+                  margin-right: emcalc(1.14, 2.67);
                   @include flexbox();
                   @include align-items(center);
                   @include justify-content(center);
-                  width: emcalc(4, 2.5);
-                  height: emcalc(4, 2.5);
+                  width: emcalc(4.5, 2.67);
+                  height: emcalc(4.5, 2.67);
                   background-color: #007aff;
                   border-radius: 50%;
-                  font-size: 2.5em;
+                  font-size: 2.67em;
                   color: #fff;
                 }
 
                 &-img {
                   margin-right: 1.14em;
-                  width: 4em;
-                  height: 4em;
+                  width: 4.5em;
+                  height: 4.5em;
                   border-radius: 50%;
                 }
 
                 &-initials {
-                  margin-right: emcalc(1.14, 1.5);
+                  margin-right: emcalc(1.14, 1.8);
                   @include flexbox();
                   @include align-items(center);
                   @include justify-content(center);
-                  width: emcalc(4, 1.5);
-                  height: emcalc(4, 1.5);
+                  width: emcalc(4.5, 1.8);
+                  height: emcalc(4.5, 1.8);
                   background-color: #fed745;
                   border-radius: 50%;
-                  font-size: 1.5em;
-                  font-weight: 700;
+                  font-size: 1.8em;
+                  font-family: "Inter-Bold";
                   letter-spacing: -0.3px;
                   color: #fff;
                 }
@@ -1910,14 +1935,14 @@ body {
                   &-subtitle {
                     margin-bottom: emcalc(0.3, 1.13);
                     font-size: 1.13em;
-                    font-weight: 500;
+                    font-family: "Inter-Medium";
                     letter-spacing: -0.06px;
                     color: #7c7c7c;
                   }
 
                   &-title {
                     font-size: 1.6em;
-                    font-weight: 500;
+                    font-family: "Inter-Medium";
                     letter-spacing: -0.16px;
                     color: #242936;
                   }
@@ -1976,13 +2001,14 @@ body {
             min-width: emcalc(4.5, 1.8);
             min-height: emcalc(4.5, 1.8);
             font-size: 1.8em;
-            font-weight: 700;
+            font-family: "Inter-Bold";
             letter-spacing: normal;
             color: #ffffff;
             border-radius: 50%;
           }
 
           &-set {
+            font-family: "Open Sans", sans-serif;
             margin-right: auto;
 
             &-improv {
@@ -1992,7 +2018,7 @@ body {
               color: var(--color-black);
 
               &-strong {
-                font-weight: 600;
+                font-family: "Inter-Semibold";
               }
             }
 
