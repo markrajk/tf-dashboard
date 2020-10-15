@@ -98,6 +98,7 @@
         <div class="content-wrapper">
             <div class="content">
                 <div class="content-card">
+                  <div class="fake-card"></div>
                     <div class="content-card-header">
                         <p class="content-card-header-title">Employees</p>
                         <div class="options">
@@ -110,7 +111,7 @@
                                 <input type="text" placeholder="Search">
                                 <i class="icon-search"></i>
                             </div>
-                            <button class="button button-light-gray">Add new</button>
+                            <button class="button button-light-gray toggle-input-row">Add new</button>
                         </div>
                     </div>
                     <div class="content-card-main">
@@ -141,7 +142,7 @@
                               </table>
                             </div>
                             <div class="custom-table-wrapper-body">
-                              <table class="custom-table">
+                              <table class="custom-table with-border">
                                 <tbody class="custom-table-body">
                                   <tr class="custom-table-row">
                                     <td class="column-01">
@@ -914,6 +915,63 @@
             e.addEventListener('click', function() {
                 headerNavLinks.forEach(x => x.classList.remove('active'));
                 this.classList.add('active')
+            })
+        })
+
+        //TABLE CARD FUNCTION
+        let fakeCard = document.querySelector('.fake-card');
+        let tableWrapperBody = document.querySelector('.custom-table-wrapper-body');
+        let tableWrapperBodyCustomTable = document.querySelector('.custom-table-wrapper-body .custom-table');
+
+        console.log(fakeCard, tableWrapperBody, tableWrapperBody)
+
+        
+
+        function backgroundCardHeight() {
+          fakeCard.style.height = `calc(${tableWrapperBodyCustomTable.clientHeight}px + 12.453em + 2.2em + 3.4em + 3.5em)`;
+          if(tableWrapperBodyCustomTable.scrollHeight >= tableWrapperBody.clientHeight) {
+            console.log('Add border');
+            tableWrapperBody.classList.add('with-border');
+            tableWrapperBodyCustomTable.classList.remove('with-border');
+          }else {
+            tableWrapperBody.classList.remove('with-border');
+            tableWrapperBodyCustomTable.classList.add('with-border');
+          }
+        }
+
+        backgroundCardHeight();
+
+        window.addEventListener('resize', function() {
+          console.log(tableWrapperBodyCustomTable.clientHeight);
+          backgroundCardHeight();
+        })
+
+        // TOGGLE INPUT ROW
+        let inputRowToggle = document.querySelector(".toggle-input-row");
+        let inputRow = document.querySelector(".custom-table-input-row");
+
+        if (inputRow) {
+          inputRowToggle.addEventListener("click", function () {
+            inputRow.classList.toggle("open");
+            backgroundCardHeight();
+          });
+        }
+
+        //NEW TALBE DROPDOWN POSITION
+        let tableTriggers = document.querySelectorAll('.custom-table tbody .custom-dropdown-trigger')
+        console.log(tableTriggers)
+
+        tableTriggers.forEach(e => {
+            e.addEventListener('click', function () {
+                const x = window.scrollY + this.getBoundingClientRect().top // Y
+                const y = window.scrollX + this.getBoundingClientRect().left // X
+
+                if (window.innerHeight < x + 200) {
+                  console.log('TOP')
+                    this.classList.add('top');
+                } else {
+                    this.classList.remove('top');
+                }
             })
         })
     </script>
