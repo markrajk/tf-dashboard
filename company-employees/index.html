@@ -937,8 +937,9 @@
 
         function backgroundCardHeight() {
           fakeCard.style.height = `calc(${tableWrapperBodyCustomTable.clientHeight}px + 12.453em + 2.2em + 3.4em + 3.5em)`;
+          console.log(tableWrapperBodyCustomTable.clientHeight);
           if(tableWrapperBodyCustomTable.scrollHeight >= tableWrapperBody.clientHeight) {
-            console.log('Add border');
+            //console.log('Add border');
             tableWrapperBody.classList.add('with-border');
             tableWrapperBodyCustomTable.classList.remove('with-border');
           }else {
@@ -950,7 +951,7 @@
         backgroundCardHeight();
 
         window.addEventListener('resize', function() {
-          console.log(tableWrapperBodyCustomTable.clientHeight);
+          //console.log(tableWrapperBodyCustomTable.clientHeight);
           backgroundCardHeight();
         })
 
