@@ -1069,8 +1069,9 @@ body {
   -ms-flex-pack: start;
   -webkit-justify-content: flex-start;
   -moz-justify-content: flex-start;
-  justify-content: flex-start;
-  border-top: 1px solid #e4e8ec; }
+  justify-content: flex-start; }
+  .settings-table-row:not(:last-of-type) {
+    border-bottom: 1px solid #e4e8ec; }
   .settings-table-row-column-01 {
     margin-right: auto; }
   .settings-table-row-column-02 {
@@ -1553,9 +1554,9 @@ body {
     -moz-justify-content: space-between;
     justify-content: space-between; }
     .content-card .content-card-header-title {
-      font-size: 2.25em;
-      font-size: 600;
-      letter-spacing: -0.17px;
+      font-size: 1.6em;
+      font-weight: 400;
+      letter-spacing: -0.08px;
       color: var(--color-black); }
     .content-card .content-card-header .more {
       display: -webkit-box;
@@ -1630,11 +1631,14 @@ body {
   #home .content-card {
     margin: 0 auto;
     max-width: 82.5em;
-    padding: 2.9em 2.9em 3.5em;
-    font-family: "Inter-Regular";
-    font-weight: 400; }
+    padding: 2.9em 2.9em 3.5em; }
     #home .content-card:not(:last-of-type) {
       margin-bottom: 2em; }
+    #home .content-card-header-title {
+      font-size: 2.25em;
+      font-weight: 600;
+      letter-spacing: -0.17px;
+      color: var(--color-black); }
     #home .content-card.my-teams {
       padding-bottom: 2em; }
       #home .content-card.my-teams .content-card-header {
@@ -1791,6 +1795,10 @@ body {
           transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out; }
           #home .content-card.my-people .content-card-main .people.active {
             position: sticky;
+            position: -webkit-sticky;
+            position: -moz-sticky;
+            position: -ms-sticky;
+            position: -o-sticky;
             opacity: 1;
             visibility: visible;
             left: 0;
@@ -2266,15 +2274,37 @@ body {
       height: 3.2em; }
 
 #team-settings-general .content {
-  height: auto;
+  height: 100%;
   padding: 1.6em 4em; }
   #team-settings-general .content-card {
+    height: auto;
+    max-height: 100%;
     padding: 3.9em;
     padding-left: 4.1em;
+    padding-bottom: 0;
+    padding-top: 0;
     max-width: 89.9em;
-    border-radius: 6px; }
+    border-radius: 6px;
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */ }
+    #team-settings-general .content-card::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0; }
     #team-settings-general .content-card-header {
-      margin-bottom: 2.6em;
+      padding-top: 3.9em;
+      position: sticky;
+      position: -webkit-sticky;
+      position: -moz-sticky;
+      position: -ms-sticky;
+      position: -o-sticky;
+      top: 0;
+      width: 100%;
+      padding-bottom: 2.6em;
       -webkit-box-direction: normal;
       -webkit-box-orient: vertical;
       -webkit-flex-direction: column;
@@ -2285,7 +2315,9 @@ body {
       -ms-flex-align: start;
       -webkit-align-items: flex-start;
       -moz-align-items: flex-start;
-      align-items: flex-start; }
+      align-items: flex-start;
+      background-color: #fff;
+      border-bottom: 1px solid #e4e8ec; }
       #team-settings-general .content-card-header-title {
         margin-bottom: 0.5em;
         font-size: 1.6em;
