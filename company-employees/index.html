@@ -904,8 +904,16 @@
         let headerMain = document.querySelector('.header-main');
 
         headerMain.addEventListener('click', function () {
+
             console.log('double click')
             header.classList.toggle('small')
+            let interval = setInterval(() => {
+              backgroundCardHeight();
+            }, 50);
+            setTimeout(function() {
+              backgroundCardHeight();
+              clearInterval(interval)
+            },500)
         });
 
         //ACTIVE LINK
@@ -952,8 +960,14 @@
 
         if (inputRow) {
           inputRowToggle.addEventListener("click", function () {
+
             inputRow.classList.toggle("open");
             backgroundCardHeight();
+
+            if(inputRow.classList.contains('open')) {
+              let objDiv = document.querySelector('.custom-table-wrapper-body');
+              objDiv.scrollTop = objDiv.scrollHeight;
+            }
           });
         }
 

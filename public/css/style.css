@@ -865,7 +865,8 @@ body {
     max-height: calc(100% - var(--table-head-row-height));
     overflow-y: auto;
     scrollbar-width: none;
-    -ms-overflow-style: none; }
+    -ms-overflow-style: none;
+    scroll-behavior: smooth; }
     .custom-table-wrapper-body::-webkit-scrollbar {
       width: 0;
       height: 0; }
@@ -2247,7 +2248,7 @@ body {
           color: #435365;
           cursor: pointer; }
           #company-employees .content-card-header .options-link.active {
-            font-weight: 600; }
+            font-weight: 500; }
         #company-employees .content-card-header .options-divider {
           margin: 0 0.2962962963em;
           font-size: 1.35em;

@@ -1696,6 +1696,7 @@ body {
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
       width: 0;
@@ -3272,7 +3273,7 @@ body {
 
             &.active {
               // font-family: "Inter-Semibold";
-              font-weight: 600;
+              font-weight: 500;
             }
           }
 
