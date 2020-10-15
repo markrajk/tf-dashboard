@@ -1980,17 +1980,17 @@ body {
   }
 
   &-icon {
-    @include flexbox();
-    @include align-items(center);
-    @include justify-content(center);
-    width: 5.7em;
-    height: 5.7em;
-    background-color: #ffa800;
-    border-radius: 50%;
+    // @include flexbox();
+    // @include align-items(center);
+    // @include justify-content(center);
+    // width: 5.7em;
+    // height: 5.7em;
+    // background-color: #ffa800;
+    // border-radius: 50%;
 
     & i {
-      font-size: 3.5em;
-      color: #fff;
+      font-size: 5.7em;
+      color: #ffa800;
     }
   }
 
@@ -3309,20 +3309,136 @@ body {
       }
 
       &-main {
-        // height: calc(100% - 6.933em);
-        // overflow-y: auto;
-        // scrollbar-width: none;
-        // /* Firefox */
-        // -ms-overflow-style: none;
-        // /* Internet Explorer 10+ */
-
-        // &::-webkit-scrollbar {
-        //   /* WebKit */
-        //   width: 0;
-        //   height: 0;
-        // }
         & .settings-table {
-          //border-top: 1px solid #e4e8ec;
+          &-row {
+            &.row-01,
+            &.row-02,
+            &.row-06 {
+              height: 7.1em;
+            }
+
+            &.row-03,
+            &.row-04,
+            &.row-05,
+            &.row-07 {
+              height: 9em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#company-settings-general {
+  & .header {
+    &-sub-nav {
+      display: none;
+    }
+  }
+
+  & .content {
+    height: 100%;
+    padding: 1.6em 4em;
+
+    &-card {
+      height: auto;
+      max-height: 100%;
+      padding: 3.9em;
+      padding-left: 4.1em;
+      padding-bottom: 0;
+      padding-top: 0;
+      max-width: 88em;
+      border-radius: 6px;
+      max-height: 100%;
+      overflow-y: auto;
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* Internet Explorer 10+ */
+
+      &::-webkit-scrollbar {
+        /* WebKit */
+        width: 0;
+        height: 0;
+      }
+
+      &-header {
+        padding-top: 3.9em;
+        position: sticky;
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        top: 0;
+        width: 100%;
+        padding-bottom: 2.6em;
+        @include flex-direction(column);
+        @include align-items(flex-start);
+        background-color: #fff;
+        border-bottom: 1px solid #e4e8ec;
+
+        &-title {
+          margin-bottom: emcalc(0.8, 1.6);
+          font-size: 1.6em;
+          // font-family: "Inter-Regular";
+          font-weight: 400;
+          letter-spacing: -0.08px;
+          color: var(--color-black);
+        }
+
+        &-caption {
+          &-text {
+            font-size: 1.23em;
+            // font-family: "Inter-Regular";
+            font-weight: 400;
+            line-height: 1.31;
+            letter-spacing: -0.06px;
+            color: #435365;
+          }
+        }
+      }
+
+      &-main {
+        & .settings-table {
+          margin-bottom: 2.3em;
+          &-row {
+            &.row-01,
+            &.row-05 {
+              height: 7.8em;
+            }
+
+            &.row-02,
+            &.row-03,
+            &.row-04 {
+              height: 10em;
+            }
+
+            & .settings-table-text {
+              text-align: right;
+              line-height: 1.5;
+            }
+
+            & .settings-table-icon {
+              & i {
+                color: var(--color-primary);
+              }
+            }
+
+            & .delete-company {
+              padding: 1em;
+              padding-left: 0;
+              font-size: 1.28em;
+              font-weight: 500;
+              letter-spacing: -0.06px;
+              color: #ff3636;
+              cursor: pointer;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
         }
       }
     }

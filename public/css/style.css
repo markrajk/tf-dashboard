@@ -1104,29 +1104,9 @@ body {
   font-weight: 400;
   letter-spacing: -0.06px;
   color: #6f7a89; }
-.settings-table-icon {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
-  width: 5.7em;
-  height: 5.7em;
-  background-color: #ffa800;
-  border-radius: 50%; }
-  .settings-table-icon i {
-    font-size: 3.5em;
-    color: #fff; }
+.settings-table-icon i {
+  font-size: 5.7em;
+  color: #ffa800; }
 .settings-table .custom-dropdown-trigger {
   padding: 0 0.9756097561em;
   display: -webkit-inline-box;
@@ -2330,6 +2310,91 @@ body {
         line-height: 1.31;
         letter-spacing: -0.06px;
         color: #435365; }
+    #team-settings-general .content-card-main .settings-table-row.row-01, #team-settings-general .content-card-main .settings-table-row.row-02, #team-settings-general .content-card-main .settings-table-row.row-06 {
+      height: 7.1em; }
+    #team-settings-general .content-card-main .settings-table-row.row-03, #team-settings-general .content-card-main .settings-table-row.row-04, #team-settings-general .content-card-main .settings-table-row.row-05, #team-settings-general .content-card-main .settings-table-row.row-07 {
+      height: 9em; }
+
+#company-settings-general .header-sub-nav {
+  display: none; }
+#company-settings-general .content {
+  height: 100%;
+  padding: 1.6em 4em; }
+  #company-settings-general .content-card {
+    height: auto;
+    max-height: 100%;
+    padding: 3.9em;
+    padding-left: 4.1em;
+    padding-bottom: 0;
+    padding-top: 0;
+    max-width: 88em;
+    border-radius: 6px;
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */ }
+    #company-settings-general .content-card::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0; }
+    #company-settings-general .content-card-header {
+      padding-top: 3.9em;
+      position: sticky;
+      position: -webkit-sticky;
+      position: -moz-sticky;
+      position: -ms-sticky;
+      position: -o-sticky;
+      top: 0;
+      width: 100%;
+      padding-bottom: 2.6em;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      align-items: flex-start;
+      background-color: #fff;
+      border-bottom: 1px solid #e4e8ec; }
+      #company-settings-general .content-card-header-title {
+        margin-bottom: 0.5em;
+        font-size: 1.6em;
+        font-weight: 400;
+        letter-spacing: -0.08px;
+        color: var(--color-black); }
+      #company-settings-general .content-card-header-caption-text {
+        font-size: 1.23em;
+        font-weight: 400;
+        line-height: 1.31;
+        letter-spacing: -0.06px;
+        color: #435365; }
+    #company-settings-general .content-card-main .settings-table {
+      margin-bottom: 2.3em; }
+      #company-settings-general .content-card-main .settings-table-row.row-01, #company-settings-general .content-card-main .settings-table-row.row-05 {
+        height: 7.8em; }
+      #company-settings-general .content-card-main .settings-table-row.row-02, #company-settings-general .content-card-main .settings-table-row.row-03, #company-settings-general .content-card-main .settings-table-row.row-04 {
+        height: 10em; }
+      #company-settings-general .content-card-main .settings-table-row .settings-table-text {
+        text-align: right;
+        line-height: 1.5; }
+      #company-settings-general .content-card-main .settings-table-row .settings-table-icon i {
+        color: var(--color-primary); }
+      #company-settings-general .content-card-main .settings-table-row .delete-company {
+        padding: 1em;
+        padding-left: 0;
+        font-size: 1.28em;
+        font-weight: 500;
+        letter-spacing: -0.06px;
+        color: #ff3636;
+        cursor: pointer; }
+        #company-settings-general .content-card-main .settings-table-row .delete-company:hover {
+          text-decoration: underline; }
 
 @keyframes slide-in-right {
   from {
