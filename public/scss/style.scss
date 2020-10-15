@@ -1131,7 +1131,7 @@ body {
     animation: fade-in-out-2 0.5s ease-in-out;
 
     & > *:not(:last-of-type) {
-      margin-right: 2em;
+      margin-right: 2.1em;
     }
 
     &-settings,
@@ -1188,6 +1188,7 @@ body {
       position: relative;
       margin-left: 1.5em;
       width: 48.1em;
+      max-width: 34.4%;
       height: 4em;
 
       & input {
@@ -1480,22 +1481,39 @@ body {
       display: none;
     }
 
+    &-main {
+      padding-left: 2.4em;
+      &-info {
+        &-icon {
+          display: none;
+        }
+
+        &-title {
+          font-size: 2.5em;
+          font-family: "Inter-Semibold";
+          line-height: 1.2;
+          letter-spacing: -0.19px;
+          color: #ffffff;
+        }
+      }
+    }
+
     &-sub-nav {
       display: none;
     }
   }
   & .content {
     padding: 3.8em;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 2em;
+    padding-right: 2em;
     margin-left: 2em;
     margin-right: 2em;
     width: 100%;
-    max-width: 82.5em;
+    max-width: 86.5em;
     margin: 0 auto;
 
     &-card {
-      padding: 3em 3em 3.5em;
+      padding: 2.9em 2.9em 3.5em;
 
       &:not(:last-of-type) {
         margin-bottom: 2em;
@@ -1562,6 +1580,8 @@ body {
       }
 
       &.my-teams {
+        padding-bottom: 2em;
+
         & .content-card-header {
           margin-bottom: 2.4em;
         }
@@ -1576,14 +1596,24 @@ body {
         & .color-card {
           margin-bottom: 1.5em;
           width: 49%;
+          max-width: 37.2em;
           padding: 1.1em 1.8em 1.7em 1.5em;
           border-radius: 9px;
+
+          //MOBILE
+          @include respond(desktop-xsm) {
+            max-width: 100%;
+            width: 100%;
+          }
 
           &-subtitle {
             font-size: 1.29em;
             font-family: "Inter-Medium";
             line-height: 1.17;
             color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
 
           &-title {
@@ -1592,6 +1622,9 @@ body {
             font-family: "Inter-Semibold";
             letter-spacing: -0.1px;
             color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
 
           &-buttons {
@@ -1652,8 +1685,8 @@ body {
           //height: 34.2em;
           overflow: 0;
           position: relative;
-          padding-left: 2.75em;
-          padding-right: 2.75em;
+          //padding-left: 2.75em;
+          //padding-right: 2.75em;
           overflow: hidden;
 
           & .people-arrow {
@@ -1667,19 +1700,23 @@ body {
             }
 
             &.right {
-              right: 1.5em;
+              right: 1.2em;
             }
 
             &.left {
-              left: 1.5em;
+              left: 1.2em;
             }
           }
 
           & .people {
+            //margin: 0 -1em;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 78em;
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            //width: 100%;
             opacity: 0;
             visibility: hidden;
             padding-top: 3.1em;
@@ -1701,6 +1738,7 @@ body {
             }
 
             & .person {
+              margin: 0 0.2em;
               width: 12.5em;
               margin-bottom: 3.4em;
               @include inline-flex();
@@ -1709,7 +1747,7 @@ body {
               @include justify-content(center);
 
               &-main {
-                margin-bottom: 0.6em;
+                margin-bottom: 0.4em;
                 position: relative;
 
                 &-img {
@@ -1732,7 +1770,7 @@ body {
                   border: solid 1px #f5f5f5;
                   background-color: #ffffff;
                   border-radius: 50%;
-                  transform: translate(45%, -45%);
+                  transform: translate(51%, -47%);
 
                   & .icon-thumbs-up {
                     font-size: 1.56em;
@@ -1761,7 +1799,7 @@ body {
                 text-overflow: ellipsis;
 
                 &-name {
-                  margin-bottom: emcalc(0.15, 1.15);
+                  margin-bottom: emcalc(0.25, 1.15);
                   font-size: 1.15em;
                   font-family: "Inter-Medium";
                   color: #13284a;
@@ -1799,9 +1837,20 @@ body {
 
           & .progress {
             padding-top: 2em;
-            padding-bottom: 2.2em;
+            padding-bottom: 2.3em;
             width: 49%;
+            max-width: 36.2em;
             border-bottom: 1px solid #efefef;
+
+            //MOBILE
+            @include respond(desktop-xsm) {
+              max-width: 100%;
+              width: 100%;
+
+              &:nth-last-of-type(2) {
+                border-bottom: 1px solid #efefef !important;
+              }
+            }
 
             &:nth-last-of-type(1) {
               border-bottom: 0;
@@ -1854,7 +1903,7 @@ body {
         padding-bottom: 4em;
 
         & .content-card-header {
-          margin-bottom: 2.4em;
+          margin-bottom: 2.2em;
         }
 
         & .content-card-main {
@@ -1868,8 +1917,8 @@ body {
 
               &-item {
                 position: relative;
-                padding-left: 1.1em;
-                padding-right: 3.4em;
+                padding-left: 0.8em;
+                padding-right: 4.3em;
                 @include flexbox();
                 @include align-items(center);
                 @include justify-content(flex-start);
@@ -1933,7 +1982,7 @@ body {
 
                 &-info {
                   &-subtitle {
-                    margin-bottom: emcalc(0.3, 1.13);
+                    margin-bottom: emcalc(0.1, 1.13);
                     font-size: 1.13em;
                     font-family: "Inter-Medium";
                     letter-spacing: -0.06px;
@@ -1950,7 +1999,7 @@ body {
 
                 & .icon-chevron-right {
                   margin-left: auto;
-                  font-size: 1.32em;
+                  font-size: 1.4em;
                   color: #bbbac1;
                 }
 
@@ -1980,7 +2029,7 @@ body {
         }
 
         & .new-feedback-item {
-          padding: 1.2em 2.6em 1.1em 1.6em;
+          padding: 1.1em 2.6em 1em 1.6em;
           @include inline-flex();
           @include align-items(center);
           @include justify-content(flex-start);
@@ -2008,13 +2057,14 @@ body {
           }
 
           &-set {
-            font-family: "Open Sans", sans-serif;
+            font-family: "Source Sans Pro", sans-serif;
             margin-right: auto;
 
             &-improv {
+              margin-bottom: emcalc(0.2, 1.45);
               font-size: 1.45em;
               font-weight: 400;
-              line-height: 1.37;
+              line-height: 1.17;
               color: var(--color-black);
 
               &-strong {
@@ -2030,7 +2080,7 @@ body {
           }
 
           & .more {
-            margin-left: 3em;
+            margin-left: 6.7em;
             @include flexbox();
             @include align-items(center);
             @include justify-content(center);
@@ -2042,6 +2092,11 @@ body {
             & i {
               font-size: 1.662em;
               color: #818181;
+            }
+
+            //MOBILE
+            @include respond(desktop-xsm) {
+              margin-left: 2em;
             }
           }
         }
