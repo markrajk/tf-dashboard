@@ -1049,7 +1049,7 @@ body {
       padding-left: 1.6em; }
     .custom-table-input-row .column-01 input {
       width: 100%;
-      max-width: 15.8536585366em;
+      max-width: 20.325203252em;
       padding-bottom: 0.6910569106em;
       font-size: 1.23em;
       font-weight: 400;
@@ -2242,6 +2242,8 @@ body {
         font-weight: 600;
         line-height: 1.2;
         letter-spacing: normal; }
+        #company-employees .content-card-header-title span {
+          font-weight: 400; }
       #company-employees .content-card-header .options {
         margin-bottom: 2.4em;
         display: -webkit-box;
@@ -2255,7 +2257,7 @@ body {
         -moz-align-items: center;
         align-items: center; }
         #company-employees .content-card-header .options-link {
-          font-size: 1.35em;
+          font-size: 1.3em;
           font-weight: 400;
           line-height: 1.19;
           letter-spacing: -0.03px;
@@ -2264,7 +2266,7 @@ body {
           #company-employees .content-card-header .options-link.active {
             font-weight: 500; }
         #company-employees .content-card-header .options-divider {
-          margin: 0 0.3703703704em;
+          margin: 0 0.3846153846em;
           font-size: 1.35em;
           font-weight: 600;
           color: #435365; }
