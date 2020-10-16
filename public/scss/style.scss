@@ -1778,6 +1778,7 @@ body {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     border: solid 1px #e6e8eb;
+    overflow: hidden;
 
     & .custom-table-row {
       height: var(--table-head-row-height);
@@ -3322,6 +3323,7 @@ body {
           max-width: 32em;
 
           & input {
+            border-radius: 4px;
             @include flexbox();
             @include align-items(center);
             padding-left: emcalc(3, 1.3);
