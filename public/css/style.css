@@ -335,7 +335,8 @@ body {
   -moz-justify-content: center;
   justify-content: center;
   cursor: pointer;
-  border-radius: 4px; }
+  border-radius: 4px;
+  white-space: nowrap; }
   .button-primary {
     background-color: var(--color-primary);
     color: #fff;
@@ -995,6 +996,17 @@ body {
       .custom-table-row td:not(.column-05).pending {
         font-weight: 500;
         color: var(--color-primary); }
+      .custom-table-row td:not(.column-05).delete {
+        font-weight: 500;
+        color: var(--color-red); }
+      .custom-table-row td:not(.column-05).choose .options-link {
+        font-weight: 500; }
+        .custom-table-row td:not(.column-05).choose .options-link.confirm {
+          color: var(--color-green); }
+        .custom-table-row td:not(.column-05).choose .options-link.deny {
+          color: var(--color-red); }
+      .custom-table-row td:not(.column-05).choose .options-divider {
+        color: #c9c9c9; }
     .custom-table-row td.column-05 .custom-dropdown {
       transition: opacity 0.3s ease-in-out;
       visibility: hidden;
@@ -1477,6 +1489,23 @@ body {
       justify-content: flex-start;
       list-style: none; }
       .header-sub-nav-list-item {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        height: 100%;
+        position: relative;
         cursor: pointer; }
         .header-sub-nav-list-item:not(:last-of-type) {
           margin-right: 3.6em; }
@@ -1509,6 +1538,17 @@ body {
           height: 0;
           overflow: hidden;
           visibility: hidden; }
+        .header-sub-nav-list-item svg {
+          display: none;
+          position: absolute;
+          bottom: -2.1em;
+          left: 50%;
+          transform: translate(-50%, 0);
+          width: 2.3em;
+          height: 1.5em;
+          z-index: 0; }
+        .header-sub-nav-list-item.active svg {
+          display: block; }
   .header.small {
     padding-top: 0; }
     .header.small .header-buttons {
@@ -1536,6 +1576,7 @@ body {
     width: 0; }
 
 .content-card {
+  padding-top: 4em;
   width: 100%;
   border-radius: 15px;
   box-shadow: 0 3px 6px 0 rgba(206, 206, 206, 0.16);
@@ -1562,6 +1603,29 @@ body {
       font-weight: 400;
       letter-spacing: -0.08px;
       color: var(--color-black); }
+    .content-card .content-card-header-caption {
+      margin-right: 2em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .content-card .content-card-header-caption-title {
+        margin-bottom: 0.625em;
+        font-size: 1.6em;
+        font-weight: 400;
+        letter-spacing: -0.04px;
+        color: var(--color-black);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .content-card .content-card-header-caption-text {
+        font-size: 1.23em;
+        font-weight: 400;
+        line-height: 1.31;
+        letter-spacing: -0.06px;
+        color: #435365;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
     .content-card .content-card-header .more {
       display: -webkit-box;
       display: -webkit-flex;
@@ -2195,17 +2259,32 @@ body {
             margin-left: 2em; } }
 
 #company-employees .header-sub-nav,
-#company-teams .header-sub-nav {
+#company-teams .header-sub-nav,
+#company-admin-rights .header-sub-nav,
+#team-settings-members .header-sub-nav,
+#team-settings-lead .header-sub-nav,
+#team-settings-viewing-rights .header-sub-nav,
+#team-settings-admin-rights .header-sub-nav {
   display: none; }
 #company-employees .content,
-#company-teams .content {
+#company-teams .content,
+#company-admin-rights .content,
+#team-settings-members .content,
+#team-settings-lead .content,
+#team-settings-viewing-rights .content,
+#team-settings-admin-rights .content {
   height: 100%;
   max-height: 100%;
   padding: 1.6em;
   padding-left: 4em;
   padding-right: 4em; }
   #company-employees .content-card,
-  #company-teams .content-card {
+  #company-teams .content-card,
+  #company-admin-rights .content-card,
+  #team-settings-members .content-card,
+  #team-settings-lead .content-card,
+  #team-settings-viewing-rights .content-card,
+  #team-settings-admin-rights .content-card {
     position: relative;
     background-color: transparent;
     border: 0;
@@ -2216,7 +2295,12 @@ body {
     box-shadow: none;
     z-index: 10; }
     #company-employees .content-card .fake-card,
-    #company-teams .content-card .fake-card {
+    #company-teams .content-card .fake-card,
+    #company-admin-rights .content-card .fake-card,
+    #team-settings-members .content-card .fake-card,
+    #team-settings-lead .content-card .fake-card,
+    #team-settings-viewing-rights .content-card .fake-card,
+    #team-settings-admin-rights .content-card .fake-card {
       width: 100%;
       height: 100%;
       position: absolute;
@@ -2227,7 +2311,12 @@ body {
       border: solid 1px #e4e8ec;
       background-color: #ffffff; }
     #company-employees .content-card-header,
-    #company-teams .content-card-header {
+    #company-teams .content-card-header,
+    #company-admin-rights .content-card-header,
+    #team-settings-members .content-card-header,
+    #team-settings-lead .content-card-header,
+    #team-settings-viewing-rights .content-card-header,
+    #team-settings-admin-rights .content-card-header {
       position: relative;
       -webkit-box-direction: normal;
       -webkit-box-orient: vertical;
@@ -2242,17 +2331,32 @@ body {
       align-items: flex-start;
       z-index: 20; }
       #company-employees .content-card-header-title,
-      #company-teams .content-card-header-title {
+      #company-teams .content-card-header-title,
+      #company-admin-rights .content-card-header-title,
+      #team-settings-members .content-card-header-title,
+      #team-settings-lead .content-card-header-title,
+      #team-settings-viewing-rights .content-card-header-title,
+      #team-settings-admin-rights .content-card-header-title {
         margin-bottom: 0.7428571429em;
         font-size: 1.75em;
         font-weight: 600;
         line-height: 1.2;
         letter-spacing: normal; }
         #company-employees .content-card-header-title span,
-        #company-teams .content-card-header-title span {
+        #company-teams .content-card-header-title span,
+        #company-admin-rights .content-card-header-title span,
+        #team-settings-members .content-card-header-title span,
+        #team-settings-lead .content-card-header-title span,
+        #team-settings-viewing-rights .content-card-header-title span,
+        #team-settings-admin-rights .content-card-header-title span {
           font-weight: 400; }
       #company-employees .content-card-header .options,
-      #company-teams .content-card-header .options {
+      #company-teams .content-card-header .options,
+      #company-admin-rights .content-card-header .options,
+      #team-settings-members .content-card-header .options,
+      #team-settings-lead .content-card-header .options,
+      #team-settings-viewing-rights .content-card-header .options,
+      #team-settings-admin-rights .content-card-header .options {
         margin-bottom: 2.4em;
         display: -webkit-box;
         display: -webkit-flex;
@@ -2265,7 +2369,12 @@ body {
         -moz-align-items: center;
         align-items: center; }
         #company-employees .content-card-header .options-link,
-        #company-teams .content-card-header .options-link {
+        #company-teams .content-card-header .options-link,
+        #company-admin-rights .content-card-header .options-link,
+        #team-settings-members .content-card-header .options-link,
+        #team-settings-lead .content-card-header .options-link,
+        #team-settings-viewing-rights .content-card-header .options-link,
+        #team-settings-admin-rights .content-card-header .options-link {
           font-size: 1.3em;
           font-weight: 400;
           line-height: 1.19;
@@ -2273,20 +2382,40 @@ body {
           color: #435365;
           cursor: pointer; }
           #company-employees .content-card-header .options-link.active,
-          #company-teams .content-card-header .options-link.active {
+          #company-teams .content-card-header .options-link.active,
+          #company-admin-rights .content-card-header .options-link.active,
+          #team-settings-members .content-card-header .options-link.active,
+          #team-settings-lead .content-card-header .options-link.active,
+          #team-settings-viewing-rights .content-card-header .options-link.active,
+          #team-settings-admin-rights .content-card-header .options-link.active {
             font-weight: 500; }
         #company-employees .content-card-header .options-divider,
-        #company-teams .content-card-header .options-divider {
+        #company-teams .content-card-header .options-divider,
+        #company-admin-rights .content-card-header .options-divider,
+        #team-settings-members .content-card-header .options-divider,
+        #team-settings-lead .content-card-header .options-divider,
+        #team-settings-viewing-rights .content-card-header .options-divider,
+        #team-settings-admin-rights .content-card-header .options-divider {
           margin: 0 0.3846153846em;
           font-size: 1.35em;
           font-weight: 600;
           color: #435365; }
       #company-employees .content-card-header .content-card-input-container,
-      #company-teams .content-card-header .content-card-input-container {
+      #company-teams .content-card-header .content-card-input-container,
+      #company-admin-rights .content-card-header .content-card-input-container,
+      #team-settings-members .content-card-header .content-card-input-container,
+      #team-settings-lead .content-card-header .content-card-input-container,
+      #team-settings-viewing-rights .content-card-header .content-card-input-container,
+      #team-settings-admin-rights .content-card-header .content-card-input-container {
         width: 100%;
         max-width: 32em; }
         #company-employees .content-card-header .content-card-input-container input,
-        #company-teams .content-card-header .content-card-input-container input {
+        #company-teams .content-card-header .content-card-input-container input,
+        #company-admin-rights .content-card-header .content-card-input-container input,
+        #team-settings-members .content-card-header .content-card-input-container input,
+        #team-settings-lead .content-card-header .content-card-input-container input,
+        #team-settings-viewing-rights .content-card-header .content-card-input-container input,
+        #team-settings-admin-rights .content-card-header .content-card-input-container input {
           border-radius: 4px;
           display: -webkit-box;
           display: -webkit-flex;
@@ -2302,15 +2431,30 @@ body {
           font-size: 1.3em;
           letter-spacing: normal; }
           #company-employees .content-card-header .content-card-input-container input::placeholder,
-          #company-teams .content-card-header .content-card-input-container input::placeholder {
+          #company-teams .content-card-header .content-card-input-container input::placeholder,
+          #company-admin-rights .content-card-header .content-card-input-container input::placeholder,
+          #team-settings-members .content-card-header .content-card-input-container input::placeholder,
+          #team-settings-lead .content-card-header .content-card-input-container input::placeholder,
+          #team-settings-viewing-rights .content-card-header .content-card-input-container input::placeholder,
+          #team-settings-admin-rights .content-card-header .content-card-input-container input::placeholder {
             color: #7e8a98; }
         #company-employees .content-card-header .content-card-input-container i,
-        #company-teams .content-card-header .content-card-input-container i {
+        #company-teams .content-card-header .content-card-input-container i,
+        #company-admin-rights .content-card-header .content-card-input-container i,
+        #team-settings-members .content-card-header .content-card-input-container i,
+        #team-settings-lead .content-card-header .content-card-input-container i,
+        #team-settings-viewing-rights .content-card-header .content-card-input-container i,
+        #team-settings-admin-rights .content-card-header .content-card-input-container i {
           top: 48%;
           left: 1.2rem;
           font-size: 1.3em; }
       #company-employees .content-card-header-bottom,
-      #company-teams .content-card-header-bottom {
+      #company-teams .content-card-header-bottom,
+      #company-admin-rights .content-card-header-bottom,
+      #team-settings-members .content-card-header-bottom,
+      #team-settings-lead .content-card-header-bottom,
+      #team-settings-viewing-rights .content-card-header-bottom,
+      #team-settings-admin-rights .content-card-header-bottom {
         margin-bottom: 2.4em;
         width: 100%;
         display: -webkit-box;
@@ -2329,21 +2473,65 @@ body {
         -moz-justify-content: space-between;
         justify-content: space-between; }
         #company-employees .content-card-header-bottom .button-light-gray,
-        #company-teams .content-card-header-bottom .button-light-gray {
+        #company-teams .content-card-header-bottom .button-light-gray,
+        #company-admin-rights .content-card-header-bottom .button-light-gray,
+        #team-settings-members .content-card-header-bottom .button-light-gray,
+        #team-settings-lead .content-card-header-bottom .button-light-gray,
+        #team-settings-viewing-rights .content-card-header-bottom .button-light-gray,
+        #team-settings-admin-rights .content-card-header-bottom .button-light-gray {
           padding: 0 1.71875em;
           height: 2.5em;
           font-size: 1.28em;
           font-weight: normal; }
     #company-employees .content-card-main,
-    #company-teams .content-card-main {
+    #company-teams .content-card-main,
+    #company-admin-rights .content-card-main,
+    #team-settings-members .content-card-main,
+    #team-settings-lead .content-card-main,
+    #team-settings-viewing-rights .content-card-main,
+    #team-settings-admin-rights .content-card-main {
       height: 100%;
       max-height: calc(100% - 12.454em); }
     #company-employees .content-card-input-container,
-    #company-teams .content-card-input-container {
+    #company-teams .content-card-input-container,
+    #company-admin-rights .content-card-input-container,
+    #team-settings-members .content-card-input-container,
+    #team-settings-lead .content-card-input-container,
+    #team-settings-viewing-rights .content-card-input-container,
+    #team-settings-admin-rights .content-card-input-container {
       height: 3.2em; }
 
 #company-teams .content-card-header-bottom .button {
   display: none; }
+
+#team-settings-members .header-sub-nav,
+#team-settings-lead .header-sub-nav,
+#team-settings-viewing-rights .header-sub-nav,
+#team-settings-admin-rights .header-sub-nav {
+  display: block; }
+#team-settings-members .content-card,
+#team-settings-lead .content-card,
+#team-settings-viewing-rights .content-card,
+#team-settings-admin-rights .content-card {
+  padding-top: 4em; }
+  #team-settings-members .content-card-header-bottom,
+  #team-settings-lead .content-card-header-bottom,
+  #team-settings-viewing-rights .content-card-header-bottom,
+  #team-settings-admin-rights .content-card-header-bottom {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    align-items: flex-end; }
+  #team-settings-members .content-card-main,
+  #team-settings-lead .content-card-main,
+  #team-settings-viewing-rights .content-card-main,
+  #team-settings-admin-rights .content-card-main {
+    height: 100%;
+    max-height: calc(100% - 6.9em); }
+
+#team-settings-viewing-rights .custom-table-row .column-04 {
+  flex: 0.5; }
 
 #team-settings-general .content {
   height: 100%;
@@ -2396,12 +2584,6 @@ body {
         font-weight: 400;
         letter-spacing: -0.08px;
         color: var(--color-black); }
-      #team-settings-general .content-card-header-caption-text {
-        font-size: 1.23em;
-        font-weight: 400;
-        line-height: 1.31;
-        letter-spacing: -0.06px;
-        color: #435365; }
     #team-settings-general .content-card-main .settings-table-row.row-01, #team-settings-general .content-card-main .settings-table-row.row-02, #team-settings-general .content-card-main .settings-table-row.row-06 {
       height: 7.1em; }
     #team-settings-general .content-card-main .settings-table-row.row-03, #team-settings-general .content-card-main .settings-table-row.row-04, #team-settings-general .content-card-main .settings-table-row.row-05, #team-settings-general .content-card-main .settings-table-row.row-07 {

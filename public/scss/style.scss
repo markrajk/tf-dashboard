@@ -1142,6 +1142,7 @@ body {
   @include justify-content(center);
   cursor: pointer;
   border-radius: 4px;
+  white-space: nowrap;
 
   &-primary {
     background-color: var(--color-primary);
@@ -1902,6 +1903,30 @@ body {
         font-weight: 500;
         color: var(--color-primary);
       }
+
+      &.delete {
+        font-weight: 500;
+        color: var(--color-red);
+      }
+
+      &.choose {
+        & .options {
+          &-link {
+            font-weight: 500;
+            &.confirm {
+              color: var(--color-green);
+            }
+
+            &.deny {
+              color: var(--color-red);
+            }
+          }
+
+          &-divider {
+            color: #c9c9c9;
+          }
+        }
+      }
     }
 
     & td.column-05 {
@@ -2398,6 +2423,11 @@ body {
       list-style: none;
 
       &-item {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        height: 100%;
+        position: relative;
         cursor: pointer;
 
         &:not(:last-of-type) {
@@ -2445,6 +2475,21 @@ body {
           height: 0;
           overflow: hidden;
           visibility: hidden;
+        }
+
+        & svg {
+          display: none;
+          position: absolute;
+          bottom: -2.1em;
+          left: 50%;
+          transform: translate(-50%, 0);
+          width: 2.3em;
+          height: 1.5em;
+          z-index: 0;
+        }
+
+        &.active svg {
+          display: block;
         }
       }
     }
@@ -2500,6 +2545,7 @@ body {
 
 .content {
   &-card {
+    padding-top: 4em;
     width: 100%;
     border-radius: 15px;
     box-shadow: 0 3px 6px 0 rgba(206, 206, 206, 0.16);
@@ -2521,6 +2567,35 @@ body {
         font-weight: 400;
         letter-spacing: -0.08px;
         color: var(--color-black);
+      }
+
+      &-caption {
+        margin-right: 2em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &-title {
+          margin-bottom: emcalc(1, 1.6);
+          font-size: 1.6em;
+          font-weight: 400;
+          letter-spacing: -0.04px;
+          color: var(--color-black);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &-text {
+          font-size: 1.23em;
+          // font-family: "Inter-Regular";
+          font-weight: 400;
+          line-height: 1.31;
+          letter-spacing: -0.06px;
+          color: #435365;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
 
       & .more {
@@ -3234,7 +3309,12 @@ body {
 }
 
 #company-employees,
-#company-teams {
+#company-teams,
+#company-admin-rights,
+#team-settings-members,
+#team-settings-lead,
+#team-settings-viewing-rights,
+#team-settings-admin-rights {
   & .header {
     &-sub-nav {
       display: none;
@@ -3404,6 +3484,44 @@ body {
   }
 }
 
+// #team-settings-members {
+
+// }
+
+#team-settings-members,
+#team-settings-lead,
+#team-settings-viewing-rights,
+#team-settings-admin-rights {
+  & .header {
+    &-sub-nav {
+      display: block;
+    }
+  }
+  & .content {
+    &-card {
+      padding-top: 4em;
+      &-header {
+        &-bottom {
+          @include align-items(flex-end);
+        }
+      }
+
+      &-main {
+        height: 100%;
+        max-height: calc(100% - 6.9em);
+      }
+    }
+  }
+}
+
+#team-settings-viewing-rights {
+  & .custom-table-row {
+    & .column-04 {
+      flex: 0.5;
+    }
+  }
+}
+
 #team-settings-general {
   & .content {
     height: 100%;
@@ -3455,16 +3573,16 @@ body {
           color: var(--color-black);
         }
 
-        &-caption {
-          &-text {
-            font-size: 1.23em;
-            // font-family: "Inter-Regular";
-            font-weight: 400;
-            line-height: 1.31;
-            letter-spacing: -0.06px;
-            color: #435365;
-          }
-        }
+        // &-caption {
+        //   &-text {
+        //     font-size: 1.23em;
+        //     // font-family: "Inter-Regular";
+        //     font-weight: 400;
+        //     line-height: 1.31;
+        //     letter-spacing: -0.06px;
+        //     color: #435365;
+        //   }
+        // }
       }
 
       &-main {
