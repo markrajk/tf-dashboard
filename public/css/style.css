@@ -1420,7 +1420,7 @@ body {
         position: relative;
         cursor: pointer; }
         .header-nav-list-item:not(:last-of-type) {
-          margin-right: 3.6em; }
+          margin-right: 3.45em; }
         .header-nav-list-item-text {
           font-size: 12.8px;
           font-weight: 400;
@@ -1466,7 +1466,7 @@ body {
           display: block; }
   .header-sub-nav {
     margin: 1.6em 4em 0;
-    padding: 0 2.5em;
+    padding: 0 2.4em;
     height: 52px;
     border-radius: 6px;
     border: solid 1px #e4e8ec;
@@ -1511,7 +1511,7 @@ body {
         position: relative;
         cursor: pointer; }
         .header-sub-nav-list-item:not(:last-of-type) {
-          margin-right: 3.6em; }
+          margin-right: 3.3em; }
         .header-sub-nav-list-item-text {
           font-size: 1.28em;
           font-weight: 400;
@@ -1520,7 +1520,7 @@ body {
           line-height: 1.18;
           letter-spacing: normal;
           text-align: left;
-          color: #404040;
+          color: var(--color-dark-gray);
           text-align: center;
           cursor: pointer; }
         .header-sub-nav-list-item:hover .header-sub-nav-list-item-text {
@@ -1655,6 +1655,32 @@ body {
       .content-card .content-card-header .more i {
         font-size: 1.662em;
         color: #818181; }
+    .content-card .content-card-header .options {
+      margin-bottom: 2.4em;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center; }
+      .content-card .content-card-header .options-link {
+        font-size: 1.3em;
+        font-weight: 400;
+        line-height: 1.19;
+        letter-spacing: -0.03px;
+        color: #435365;
+        cursor: pointer; }
+        .content-card .content-card-header .options-link.active {
+          font-weight: 500; }
+      .content-card .content-card-header .options-divider {
+        margin: 0 0.3846153846em;
+        font-size: 1.35em;
+        font-weight: 600;
+        color: #435365; }
   .content-card-input-container {
     position: relative;
     width: 32.6em;
@@ -2356,56 +2382,6 @@ body {
         #team-settings-viewing-rights .content-card-header-title span,
         #team-settings-admin-rights .content-card-header-title span {
           font-weight: 400; }
-      #company-employees .content-card-header .options,
-      #company-teams .content-card-header .options,
-      #company-admin-rights .content-card-header .options,
-      #team-settings-members .content-card-header .options,
-      #team-settings-lead .content-card-header .options,
-      #team-settings-viewing-rights .content-card-header .options,
-      #team-settings-admin-rights .content-card-header .options {
-        margin-bottom: 2.4em;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        -moz-align-items: center;
-        align-items: center; }
-        #company-employees .content-card-header .options-link,
-        #company-teams .content-card-header .options-link,
-        #company-admin-rights .content-card-header .options-link,
-        #team-settings-members .content-card-header .options-link,
-        #team-settings-lead .content-card-header .options-link,
-        #team-settings-viewing-rights .content-card-header .options-link,
-        #team-settings-admin-rights .content-card-header .options-link {
-          font-size: 1.3em;
-          font-weight: 400;
-          line-height: 1.19;
-          letter-spacing: -0.03px;
-          color: #435365;
-          cursor: pointer; }
-          #company-employees .content-card-header .options-link.active,
-          #company-teams .content-card-header .options-link.active,
-          #company-admin-rights .content-card-header .options-link.active,
-          #team-settings-members .content-card-header .options-link.active,
-          #team-settings-lead .content-card-header .options-link.active,
-          #team-settings-viewing-rights .content-card-header .options-link.active,
-          #team-settings-admin-rights .content-card-header .options-link.active {
-            font-weight: 500; }
-        #company-employees .content-card-header .options-divider,
-        #company-teams .content-card-header .options-divider,
-        #company-admin-rights .content-card-header .options-divider,
-        #team-settings-members .content-card-header .options-divider,
-        #team-settings-lead .content-card-header .options-divider,
-        #team-settings-viewing-rights .content-card-header .options-divider,
-        #team-settings-admin-rights .content-card-header .options-divider {
-          margin: 0 0.3846153846em;
-          font-size: 1.35em;
-          font-weight: 600;
-          color: #435365; }
       #company-employees .content-card-header .content-card-input-container,
       #company-teams .content-card-header .content-card-input-container,
       #company-admin-rights .content-card-header .content-card-input-container,
@@ -2519,6 +2495,9 @@ body {
 #team-settings-lead .content-card,
 #team-settings-viewing-rights .content-card,
 #team-settings-admin-rights .content-card {
+  max-width: 89.9em;
+  padding-left: 4em;
+  padding-right: 4em;
   padding-top: 4em; }
   #team-settings-members .content-card-header-bottom,
   #team-settings-lead .content-card-header-bottom,
@@ -2603,8 +2582,7 @@ body {
   #company-settings-general .content-card {
     height: auto;
     max-height: 100%;
-    padding: 3.9em;
-    padding-left: 4.1em;
+    padding: 3.1em;
     padding-bottom: 0;
     padding-top: 0;
     max-width: 88em;
@@ -2620,7 +2598,7 @@ body {
       width: 0;
       height: 0; }
     #company-settings-general .content-card-header {
-      padding-top: 3.9em;
+      padding-top: 2.1em;
       position: sticky;
       position: -webkit-sticky;
       position: -moz-sticky;
@@ -2643,11 +2621,13 @@ body {
       background-color: #fff;
       border-bottom: 1px solid #e4e8ec; }
       #company-settings-general .content-card-header-title {
-        margin-bottom: 0.5em;
-        font-size: 1.6em;
-        font-weight: 400;
-        letter-spacing: -0.08px;
-        color: var(--color-black); }
+        margin-bottom: 0.7428571429em;
+        font-size: 1.75em;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: normal; }
+        #company-settings-general .content-card-header-title span {
+          font-weight: 400; }
       #company-settings-general .content-card-header-caption-text {
         font-size: 1.23em;
         font-weight: 400;
@@ -2675,6 +2655,196 @@ body {
         cursor: pointer; }
         #company-settings-general .content-card-main .settings-table-row .delete-company:hover {
           text-decoration: underline; }
+
+#team-members-grid .content {
+  padding: 1.6em 4em;
+  height: 100%; }
+  #team-members-grid .content-card {
+    padding: 2.2em 3em;
+    padding-top: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */ }
+    #team-members-grid .content-card::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0; }
+    #team-members-grid .content-card-header {
+      padding-top: 2.2em;
+      position: sticky;
+      position: -webkit-sticky;
+      position: -moz-sticky;
+      position: -ms-sticky;
+      position: -o-sticky;
+      top: 0;
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      align-items: flex-start;
+      background-color: #fff;
+      z-index: 100; }
+      #team-members-grid .content-card-header-title {
+        margin-bottom: 0.6857142857em;
+        font-size: 1.75em;
+        font-weight: 600;
+        color: var(--color-black); }
+      #team-members-grid .content-card-header .options {
+        margin-bottom: 1.6em; }
+      #team-members-grid .content-card-header .content-card-input-container {
+        margin-right: 1.5em; }
+      #team-members-grid .content-card-header-bottom {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        -webkit-justify-content: flex-start;
+        -moz-justify-content: flex-start;
+        justify-content: flex-start; }
+        #team-members-grid .content-card-header-bottom .button-primary {
+          padding: 0 1.25em;
+          height: 2.65625em;
+          font-size: 1.28em; }
+    #team-members-grid .content-card-main .people {
+      padding-top: 3.7em;
+      width: 100%;
+      max-width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      align-items: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      justify-content: flex-start;
+      overflow: hidden;
+      transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out; }
+      #team-members-grid .content-card-main .people .person {
+        width: 12.7em;
+        margin-bottom: 3.4em;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -moz-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center; }
+        #team-members-grid .content-card-main .people .person-main {
+          margin-bottom: 0.4em;
+          position: relative; }
+          #team-members-grid .content-card-main .people .person-main-img {
+            width: 7.25em;
+            height: 7.25em;
+            object-fit: contain;
+            border-radius: 16px; }
+          #team-members-grid .content-card-main .people .person-main-icon {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2.8em;
+            height: 2.8em;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+            border: solid 1px #f5f5f5;
+            background-color: #ffffff;
+            border-radius: 50%;
+            transform: translate(51%, -47%); }
+            #team-members-grid .content-card-main .people .person-main-icon .icon-thumbs-up {
+              font-size: 1.56em;
+              color: #00be20; }
+            #team-members-grid .content-card-main .people .person-main-icon .icon-exclamation-circle {
+              font-size: 1.56em;
+              color: #f52600; }
+            #team-members-grid .content-card-main .people .person-main-icon .ok {
+              font-size: 1.2em;
+              font-weight: 700;
+              letter-spacing: -0.24px;
+              color: #ff8900; }
+        #team-members-grid .content-card-main .people .person-info {
+          width: 12em;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+          #team-members-grid .content-card-main .people .person-info-name {
+            margin-bottom: 0.2173913043em;
+            font-size: 1.15em;
+            font-weight: 500;
+            color: #13284a;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+          #team-members-grid .content-card-main .people .person-info-position {
+            padding: 0 1em;
+            font-size: 1.05em;
+            font-weight: 400;
+            letter-spacing: -0.03px;
+            color: #7a869a;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
 
 @keyframes slide-in-right {
   from {
