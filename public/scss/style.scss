@@ -114,7 +114,7 @@
   --header-main-height-small: 5.4em;
 
   //TALBE
-  --table-head-row-height: 3.5em;
+  --table-head-row-height: 3.4em;
   --table-body-row-height: 4.6em;
 }
 
@@ -224,6 +224,22 @@
   font-size: $size;
   color: #434e5a;
   letter-spacing: -0.03px;
+}
+
+//Table header text
+@mixin th-text($size: 1.1em) {
+  font-size: $size;
+  font-weight: 400;
+  color: #2f373e;
+  line-height: 1.27;
+}
+
+//Table body text
+@mixin td-text($size: 1.2em) {
+  font-size: $size;
+  font-weight: 400;
+  color: #2f373e;
+  line-height: 1.25;
 }
 
 /////////////////////////////////////
@@ -1127,6 +1143,13 @@ body {
   cursor: pointer;
   border-radius: 4px;
 
+  &-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 500;
+    border: 1px solid var(--color-primary);
+  }
+
   &-white {
     // font-family: "Inter-Regular";
     font-weight: 400;
@@ -1757,7 +1780,7 @@ body {
     border: solid 1px #e6e8eb;
 
     & .custom-table-row {
-      height: 3.5em;
+      height: var(--table-head-row-height);
       border-top: 0;
       background-color: #f5f7f8;
     }
@@ -1772,7 +1795,7 @@ body {
     overflow: visible;
 
     & .custom-table-row {
-      height: 4.6em;
+      height: var(--table-body-row-height);
       transition: background-color 0.3s ease-in-out;
 
       &:hover {
@@ -1799,7 +1822,7 @@ body {
     //general table column settings (width etc.)
     & td,
     & th {
-      padding-left: 1.8rem;
+      padding-left: 1.7rem;
       @include flexbox();
       @include align-items(center);
       @include justify-content(flex-start);
@@ -1817,25 +1840,30 @@ body {
         }
       }
 
+      &.column-01 {
+        flex: 0.87;
+      }
+
       &.column-02 {
-        flex: 1.2;
+        flex: 1;
+      }
+
+      &.column-03 {
+        flex: 0.78;
       }
 
       &.column-04 {
-        flex: 0.8;
+        flex: 0.4;
       }
 
       &.column-05 {
-        flex: 0.3;
+        flex: 0.22;
       }
     }
 
     & th {
       & p {
-        font-size: 1.1em;
-        // font-family: "Inter-Regular";
-        font-weight: 400;
-        color: #2f373e;
+        @include th-text();
       }
 
       & .icon-caret-down {
@@ -1846,7 +1874,6 @@ body {
 
       &.active {
         & p {
-          // font-family: "Inter-Medium";
           font-weight: 500;
         }
         & .icon-caret-down {
@@ -1856,21 +1883,14 @@ body {
     }
 
     & td:not(.column-05) {
-      font-size: 1.2em;
-      // font-family: "Inter-Regular";
-      font-weight: 400;
-      font-stretch: normal;
-      letter-spacing: -0.06px;
-      color: #1b2733;
+      @include td-text();
 
       &.active {
-        font-family: "Inter-Medium";
         font-weight: 500;
         color: #2f9b44;
       }
 
       &.pending {
-        font-family: "Inter-Medium";
         font-weight: 500;
         color: var(--color-primary);
       }
@@ -3254,7 +3274,7 @@ body {
         z-index: 20;
 
         &-title {
-          margin-bottom: emcalc(1.2, 2.25);
+          margin-bottom: emcalc(1.6, 2.25);
         }
 
         & .options {
