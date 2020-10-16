@@ -2341,6 +2341,7 @@ body {
           text-align: left;
           color: #404040;
           text-align: center;
+          cursor: pointer;
         }
 
         //on hover remove shake when changing weight
@@ -2356,6 +2357,7 @@ body {
           height: 0;
           overflow: hidden;
           visibility: hidden;
+          cursor: pointer;
         }
 
         &.active .header-nav-list-item-text {
@@ -2371,6 +2373,7 @@ body {
           height: 0;
           overflow: hidden;
           visibility: hidden;
+          cursor: pointer;
         }
 
         // &.active::after {
@@ -2445,6 +2448,7 @@ body {
           text-align: left;
           color: #404040;
           text-align: center;
+          cursor: pointer;
         }
 
         //on hover remove shake when changing weight
@@ -2460,6 +2464,7 @@ body {
           height: 0;
           overflow: hidden;
           visibility: hidden;
+          cursor: pointer;
         }
 
         &.active .header-sub-nav-list-item-text {
@@ -2475,6 +2480,7 @@ body {
           height: 0;
           overflow: hidden;
           visibility: hidden;
+          cursor: pointer;
         }
 
         & svg {

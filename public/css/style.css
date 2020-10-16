@@ -1430,7 +1430,8 @@ body {
           letter-spacing: normal;
           text-align: left;
           color: #404040;
-          text-align: center; }
+          text-align: center;
+          cursor: pointer; }
         .header-nav-list-item:hover .header-nav-list-item-text {
           font-weight: 500; }
         .header-nav-list-item .header-nav-list-item-text::before {
@@ -1439,7 +1440,8 @@ body {
           font-weight: 500;
           height: 0;
           overflow: hidden;
-          visibility: hidden; }
+          visibility: hidden;
+          cursor: pointer; }
         .header-nav-list-item.active .header-nav-list-item-text {
           font-weight: 600;
           color: #000; }
@@ -1449,7 +1451,8 @@ body {
           font-weight: 600;
           height: 0;
           overflow: hidden;
-          visibility: hidden; }
+          visibility: hidden;
+          cursor: pointer; }
         .header-nav-list-item svg {
           display: none;
           position: absolute;
@@ -1518,7 +1521,8 @@ body {
           letter-spacing: normal;
           text-align: left;
           color: #404040;
-          text-align: center; }
+          text-align: center;
+          cursor: pointer; }
         .header-sub-nav-list-item:hover .header-sub-nav-list-item-text {
           font-weight: 500; }
         .header-sub-nav-list-item .header-sub-nav-list-item-text::before {
@@ -1527,7 +1531,8 @@ body {
           font-weight: 500;
           height: 0;
           overflow: hidden;
-          visibility: hidden; }
+          visibility: hidden;
+          cursor: pointer; }
         .header-sub-nav-list-item.active .header-sub-nav-list-item-text {
           font-weight: 600;
           color: #000; }
@@ -1537,7 +1542,8 @@ body {
           font-weight: 600;
           height: 0;
           overflow: hidden;
-          visibility: hidden; }
+          visibility: hidden;
+          cursor: pointer; }
         .header-sub-nav-list-item svg {
           display: none;
           position: absolute;
