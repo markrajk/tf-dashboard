@@ -1867,9 +1867,10 @@ body {
       }
 
       & .icon-caret-down {
-        margin-left: emcalc(0.6, 0.6);
+        margin-left: emcalc(0.4, 0.6);
         font-size: 0.6em;
         color: #bcc3ca;
+        transition: transform 0.3s ease-in-out;
       }
 
       &.active {
@@ -1878,6 +1879,12 @@ body {
         }
         & .icon-caret-down {
           color: #2f373e;
+        }
+      }
+
+      &.up {
+        & .icon-caret-down {
+          transform: rotateZ(180deg);
         }
       }
     }
@@ -3274,7 +3281,11 @@ body {
         z-index: 20;
 
         &-title {
-          margin-bottom: emcalc(1.6, 2.25);
+          margin-bottom: emcalc(1.3, 1.75);
+          font-size: 1.75em;
+          font-weight: 600;
+          line-height: 1.2;
+          letter-spacing: normal;
         }
 
         & .options {
@@ -3298,11 +3309,34 @@ body {
           }
 
           &-divider {
-            margin: 0 emcalc(0.4, 1.35);
+            margin: 0 emcalc(0.5, 1.35);
             font-size: 1.35em;
             // font-family: "Inter-Semibold";
             font-weight: 600;
             color: #435365;
+          }
+        }
+
+        & .content-card-input-container {
+          width: 100%;
+          max-width: 32em;
+
+          & input {
+            @include flexbox();
+            @include align-items(center);
+            padding-left: emcalc(3, 1.3);
+            font-size: 1.3em;
+            letter-spacing: normal;
+
+            &::placeholder {
+              color: #7e8a98;
+            }
+          }
+
+          & i {
+            top: 48%;
+            left: 1.2rem;
+            font-size: 1.3em;
           }
         }
 
@@ -3623,5 +3657,18 @@ body {
   to {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+//SAFARI FIX
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .custom-table-head {
+      & .icon-caret-up,
+      & .icon-caret-down {
+        margin-left: 4px !important;
+        font-size: 6px !important;
+      }
+    }
   }
 }

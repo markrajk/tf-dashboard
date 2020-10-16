@@ -989,6 +989,16 @@
                 }
             })
         })
+
+
+        //ROTATE TABLE ARROWS
+        let tableHeaderTriggers = document.querySelectorAll('.custom-table-head .custom-table-row th');
+
+        tableHeaderTriggers.forEach(e => {
+          e.addEventListener('click', function() {
+            this.classList.toggle('up');
+          })
+        })
     </script>
 </body>
 </html>
