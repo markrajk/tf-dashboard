@@ -352,6 +352,12 @@ body {
     color: 1b2733;
     border: solid 1px #e4e8ec;
     background-color: #fdfdfd; }
+  .button-green {
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.03px;
+    background-color: #17d624;
+    border: 1px solid #17d624; }
 
 .custom-dropdown {
   display: inline-block;
@@ -989,7 +995,10 @@ body {
       font-size: 1.2em;
       font-weight: 400;
       color: #2f373e;
-      line-height: 1.25; }
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
       .custom-table-row td:not(.column-05).active {
         font-weight: 500;
         color: #2f9b44; }
@@ -999,6 +1008,62 @@ body {
       .custom-table-row td:not(.column-05).delete {
         font-weight: 500;
         color: var(--color-red); }
+      .custom-table-row td:not(.column-05) .table-set {
+        font-size: 1rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        -webkit-justify-content: flex-start;
+        -moz-justify-content: flex-start;
+        justify-content: flex-start;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+        .custom-table-row td:not(.column-05) .table-set-img {
+          margin-right: 1.5em;
+          width: 4em;
+          height: 4em;
+          border-radius: 50%; }
+        .custom-table-row td:not(.column-05) .table-set-info {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+          .custom-table-row td:not(.column-05) .table-set-info-name {
+            margin-bottom: 0.234375em;
+            font-size: 1.28em;
+            font-weight: 400;
+            letter-spacing: -0.03px;
+            color: #172736;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+            .custom-table-row td:not(.column-05) .table-set-info-name-icon {
+              display: none;
+              margin-left: 0.9rem;
+              font-size: 1.078125em;
+              color: #ffba00; }
+            .custom-table-row td:not(.column-05) .table-set-info-name.lead .table-set-info-name-icon {
+              display: inline-block; }
+          .custom-table-row td:not(.column-05) .table-set-info-email {
+            font-size: 1.13em;
+            font-weight: 400;
+            color: #647281;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+      .custom-table-row td:not(.column-05) .button-green {
+        padding: 0 1.52em;
+        height: 2.48em;
+        font-size: 1.25rem; }
       .custom-table-row td:not(.column-05).choose .options-link {
         font-weight: 500; }
         .custom-table-row td:not(.column-05).choose .options-link.confirm {
@@ -1177,7 +1242,8 @@ body {
   width: 100%;
   border: solid 1px #cfd7e0;
   border-top: 0;
-  background-color: #fff; }
+  background-color: #fff;
+  z-index: 1000; }
   .settings-table .custom-dropdown-menu-item {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2296,7 +2362,8 @@ body {
 #team-settings-members .header-sub-nav,
 #team-settings-lead .header-sub-nav,
 #team-settings-viewing-rights .header-sub-nav,
-#team-settings-admin-rights .header-sub-nav {
+#team-settings-admin-rights .header-sub-nav,
+#team-members-table .header-sub-nav {
   display: none; }
 #company-employees .content,
 #company-teams .content,
@@ -2304,7 +2371,8 @@ body {
 #team-settings-members .content,
 #team-settings-lead .content,
 #team-settings-viewing-rights .content,
-#team-settings-admin-rights .content {
+#team-settings-admin-rights .content,
+#team-members-table .content {
   height: 100%;
   max-height: 100%;
   padding: 1.6em;
@@ -2316,7 +2384,8 @@ body {
   #team-settings-members .content-card,
   #team-settings-lead .content-card,
   #team-settings-viewing-rights .content-card,
-  #team-settings-admin-rights .content-card {
+  #team-settings-admin-rights .content-card,
+  #team-members-table .content-card {
     position: relative;
     background-color: transparent;
     border: 0;
@@ -2332,7 +2401,8 @@ body {
     #team-settings-members .content-card .fake-card,
     #team-settings-lead .content-card .fake-card,
     #team-settings-viewing-rights .content-card .fake-card,
-    #team-settings-admin-rights .content-card .fake-card {
+    #team-settings-admin-rights .content-card .fake-card,
+    #team-members-table .content-card .fake-card {
       width: 100%;
       height: 100%;
       position: absolute;
@@ -2348,7 +2418,8 @@ body {
     #team-settings-members .content-card-header,
     #team-settings-lead .content-card-header,
     #team-settings-viewing-rights .content-card-header,
-    #team-settings-admin-rights .content-card-header {
+    #team-settings-admin-rights .content-card-header,
+    #team-members-table .content-card-header {
       position: relative;
       -webkit-box-direction: normal;
       -webkit-box-orient: vertical;
@@ -2368,7 +2439,8 @@ body {
       #team-settings-members .content-card-header-title,
       #team-settings-lead .content-card-header-title,
       #team-settings-viewing-rights .content-card-header-title,
-      #team-settings-admin-rights .content-card-header-title {
+      #team-settings-admin-rights .content-card-header-title,
+      #team-members-table .content-card-header-title {
         margin-bottom: 0.7428571429em;
         font-size: 1.75em;
         font-weight: 600;
@@ -2380,7 +2452,8 @@ body {
         #team-settings-members .content-card-header-title span,
         #team-settings-lead .content-card-header-title span,
         #team-settings-viewing-rights .content-card-header-title span,
-        #team-settings-admin-rights .content-card-header-title span {
+        #team-settings-admin-rights .content-card-header-title span,
+        #team-members-table .content-card-header-title span {
           font-weight: 400; }
       #company-employees .content-card-header .content-card-input-container,
       #company-teams .content-card-header .content-card-input-container,
@@ -2388,7 +2461,8 @@ body {
       #team-settings-members .content-card-header .content-card-input-container,
       #team-settings-lead .content-card-header .content-card-input-container,
       #team-settings-viewing-rights .content-card-header .content-card-input-container,
-      #team-settings-admin-rights .content-card-header .content-card-input-container {
+      #team-settings-admin-rights .content-card-header .content-card-input-container,
+      #team-members-table .content-card-header .content-card-input-container {
         width: 100%;
         max-width: 32em; }
         #company-employees .content-card-header .content-card-input-container input,
@@ -2397,7 +2471,8 @@ body {
         #team-settings-members .content-card-header .content-card-input-container input,
         #team-settings-lead .content-card-header .content-card-input-container input,
         #team-settings-viewing-rights .content-card-header .content-card-input-container input,
-        #team-settings-admin-rights .content-card-header .content-card-input-container input {
+        #team-settings-admin-rights .content-card-header .content-card-input-container input,
+        #team-members-table .content-card-header .content-card-input-container input {
           border-radius: 4px;
           display: -webkit-box;
           display: -webkit-flex;
@@ -2418,7 +2493,8 @@ body {
           #team-settings-members .content-card-header .content-card-input-container input::placeholder,
           #team-settings-lead .content-card-header .content-card-input-container input::placeholder,
           #team-settings-viewing-rights .content-card-header .content-card-input-container input::placeholder,
-          #team-settings-admin-rights .content-card-header .content-card-input-container input::placeholder {
+          #team-settings-admin-rights .content-card-header .content-card-input-container input::placeholder,
+          #team-members-table .content-card-header .content-card-input-container input::placeholder {
             color: #7e8a98; }
         #company-employees .content-card-header .content-card-input-container i,
         #company-teams .content-card-header .content-card-input-container i,
@@ -2426,7 +2502,8 @@ body {
         #team-settings-members .content-card-header .content-card-input-container i,
         #team-settings-lead .content-card-header .content-card-input-container i,
         #team-settings-viewing-rights .content-card-header .content-card-input-container i,
-        #team-settings-admin-rights .content-card-header .content-card-input-container i {
+        #team-settings-admin-rights .content-card-header .content-card-input-container i,
+        #team-members-table .content-card-header .content-card-input-container i {
           top: 48%;
           left: 1.2rem;
           font-size: 1.3em; }
@@ -2436,7 +2513,8 @@ body {
       #team-settings-members .content-card-header-bottom,
       #team-settings-lead .content-card-header-bottom,
       #team-settings-viewing-rights .content-card-header-bottom,
-      #team-settings-admin-rights .content-card-header-bottom {
+      #team-settings-admin-rights .content-card-header-bottom,
+      #team-members-table .content-card-header-bottom {
         margin-bottom: 2.4em;
         width: 100%;
         display: -webkit-box;
@@ -2460,7 +2538,8 @@ body {
         #team-settings-members .content-card-header-bottom .button-light-gray,
         #team-settings-lead .content-card-header-bottom .button-light-gray,
         #team-settings-viewing-rights .content-card-header-bottom .button-light-gray,
-        #team-settings-admin-rights .content-card-header-bottom .button-light-gray {
+        #team-settings-admin-rights .content-card-header-bottom .button-light-gray,
+        #team-members-table .content-card-header-bottom .button-light-gray {
           padding: 0 1.71875em;
           height: 2.5em;
           font-size: 1.28em;
@@ -2471,7 +2550,8 @@ body {
     #team-settings-members .content-card-main,
     #team-settings-lead .content-card-main,
     #team-settings-viewing-rights .content-card-main,
-    #team-settings-admin-rights .content-card-main {
+    #team-settings-admin-rights .content-card-main,
+    #team-members-table .content-card-main {
       height: 100%;
       max-height: calc(100% - 12.454em); }
     #company-employees .content-card-input-container,
@@ -2480,7 +2560,8 @@ body {
     #team-settings-members .content-card-input-container,
     #team-settings-lead .content-card-input-container,
     #team-settings-viewing-rights .content-card-input-container,
-    #team-settings-admin-rights .content-card-input-container {
+    #team-settings-admin-rights .content-card-input-container,
+    #team-members-table .content-card-input-container {
       height: 3.2em; }
 
 #company-teams .content-card-header-bottom .button {
@@ -2517,6 +2598,55 @@ body {
 
 #team-settings-viewing-rights .custom-table-row .column-04 {
   flex: 0.5; }
+
+#team-members-table .content-card {
+  max-width: 100%; }
+  #team-members-table .content-card-header-bottom {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start; }
+    #team-members-table .content-card-header-bottom .content-card-input-container {
+      margin-right: 1.6em;
+      height: 3.4em; }
+    #team-members-table .content-card-header-bottom .button-primary {
+      padding: 0 1.25em;
+      height: 2.65625em;
+      font-size: 1.28em; }
+  #team-members-table .content-card-main .custom-table-wrapper {
+    max-width: 93.7em; }
+    #team-members-table .content-card-main .custom-table-wrapper-body.with-border {
+      border-radius: 0;
+      border: 0;
+      border-bottom: solid 1px #e6e8eb; }
+  #team-members-table .content-card-main .custom-table-row td, #team-members-table .content-card-main .custom-table-row th {
+    padding-left: 1.2rem; }
+  #team-members-table .content-card-main .custom-table-head {
+    border-radius: 4px;
+    overflow: visible; }
+    #team-members-table .content-card-main .custom-table-head .custom-dropdown-trigger svg {
+      margin-bottom: -0.5rem; }
+      #team-members-table .content-card-main .custom-table-head .custom-dropdown-trigger svg .border {
+        display: none; }
+    #team-members-table .content-card-main .custom-table-head .custom-dropdown-trigger:focus .border {
+      display: block; }
+  #team-members-table .content-card-main .custom-table-body {
+    border: 0; }
+    #team-members-table .content-card-main .custom-table-body .custom-table-row {
+      height: 6em;
+      border: 0;
+      border-bottom: 1.25px solid #ededed; }
+  #team-members-table .content-card-main .custom-table .column-01 {
+    flex: 1; }
+  #team-members-table .content-card-main .custom-table .column-02 {
+    flex: 0.667; }
+  #team-members-table .content-card-main .custom-table .column-03 {
+    flex: 0.66; }
+  #team-members-table .content-card-main .custom-table .column-04 {
+    flex: 0.58; }
+  #team-members-table .content-card-main .custom-table .column-05 {
+    flex: 0.18; }
 
 #team-settings-general .content {
   height: 100%;
