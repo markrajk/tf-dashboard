@@ -3655,6 +3655,10 @@ body {
             border-radius: 4px;
             overflow: visible;
 
+            & .custom-table-row {
+              border-radius: 4px;
+            }
+
             & .custom-dropdown {
               &-trigger {
                 & svg {
