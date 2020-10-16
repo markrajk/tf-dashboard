@@ -966,15 +966,15 @@ body {
       .custom-table-row td.column-04, .custom-table-row th.column-04 {
         flex: 0.4; }
       .custom-table-row td.column-05, .custom-table-row th.column-05 {
-        flex: 0.22; }
+        flex: 0.25; }
     .custom-table-row th p {
       font-size: 1.1em;
       font-weight: 400;
       color: #2f373e;
       line-height: 1.27; }
     .custom-table-row th .icon-caret-down {
-      margin-left: 0.6666666667em;
-      font-size: 0.6em;
+      margin-left: 0.6153846154em;
+      font-size: 0.65em;
       color: #bcc3ca;
       transition: transform 0.3s ease-in-out; }
     .custom-table-row th.active p {
@@ -2506,4 +2506,4 @@ body {
   @supports (-webkit-appearance: none) {
     .custom-table-head .icon-caret-up, .custom-table-head .icon-caret-down {
       margin-left: 4px !important;
-      font-size: 6px !important; } } }
+      font-size: 6.5px !important; } } }
