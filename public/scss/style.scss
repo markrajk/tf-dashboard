@@ -3233,7 +3233,8 @@ body {
   }
 }
 
-#company-employees {
+#company-employees,
+#company-teams {
   & .header {
     &-sub-nav {
       display: none;
@@ -3384,6 +3385,20 @@ body {
 
       &-input-container {
         height: 3.2em;
+      }
+    }
+  }
+}
+
+#company-teams {
+  & .content {
+    &-card {
+      &-header {
+        &-bottom {
+          & .button {
+            display: none;
+          }
+        }
       }
     }
   }
