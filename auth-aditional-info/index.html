@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Feedback | Create Account | Add Aditional Information</title>
+    <link rel="stylesheet" href="../public/css/style.css" />
+  </head>
+  <body>
+    <main class="auth" id="additional-info">
+      <img
+        src="../public/img/logo-only.png"
+        alt="Team Feedback logo"
+        class="auth-logo"
+      />
+
+      <div class="auth-card">
+        <h2 class="auth-card-title">Two more details</h2>
+        <p class="auth-card-subtitle">
+          Your company requests you to add a job title and to upload a profile
+          picture.
+        </p>
+
+        <label for="uploadImage" class="additional-info-img"></label>
+        <input type="file" name="uploadImage" id="uploadImage" hidden />
+
+        <div class="input-container">
+          <input type="text" placeholder="Enter your job title" />
+          <i class="icon-check-circle"></i>
+          <i class="icon-exclamation-circle"></i>
+          <div class="show-password">
+            <i class="icon-eye-open"></i>
+            <i class="icon-eye-closed"></i>
+          </div>
+        </div>
+
+        <button
+          class="button-primary"
+          onclick="window.location.href = '../auth-join-company'"
+        >
+          Confirm
+        </button>
+        <div class="auth-card-footer">
+          <p class="auth-card-text">
+            Didn’t receive the code? <button>Click here</button>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script src="../public/js/main.js"></script>
+  </body>
+</html>

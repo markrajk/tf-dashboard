@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Feedback | Create Account</title>
+    <link rel="stylesheet" href="../public/css/style.css" />
+  </head>
+  <body>
+    <main class="auth" id="create-account">
+      <img
+        src="../public/img/logo-only.png"
+        alt="Team Feedback logo"
+        class="auth-logo"
+      />
+
+      <div class="auth-card">
+        <h2 class="auth-card-title">Create your account</h2>
+        <div class="input-container pass">
+          <input type="emal" placeholder="Email" />
+          <i class="icon-check-circle"></i>
+          <i class="icon-exclamation-circle"></i>
+          <div class="show-password">
+            <i class="icon-eye-open"></i>
+            <i class="icon-eye-closed"></i>
+          </div>
+        </div>
+        <div class="input-container fail">
+          <input type="text" placeholder="Full name" />
+          <i class="icon-check-circle"></i>
+          <i class="icon-exclamation-circle"></i>
+          <div class="show-password">
+            <i class="icon-eye-open"></i>
+            <i class="icon-eye-closed"></i>
+          </div>
+        </div>
+
+        <div class="input-container password">
+          <input type="password" placeholder="Choose a password" />
+          <i class="icon-check-circle"></i>
+          <i class="icon-exclamation-circle"></i>
+          <div class="show-password">
+            <i class="icon-eye-open"></i>
+            <i class="icon-eye-closed"></i>
+          </div>
+        </div>
+
+        <p class="auth-card-text small">
+          By creating my account, I accept the Team Feedback
+          <button>Terms of Service</button> and acknowledge the
+          <button>Privacy Policy.</button>
+        </p>
+
+        <button
+          class="button-primary"
+          onclick="window.location.href = '../auth-verify-email'"
+        >
+          Create account
+        </button>
+        <div class="auth-card-footer">
+          <p class="auth-card-text">
+            Already have an account?
+            <a href="../auth-sign-in/index.html">Sign in</a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script src="../public/js/main.js"></script>
+  </body>
+</html>

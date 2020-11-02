@@ -48,7 +48,7 @@ let peopleSlidesTriggerLeft = document.querySelector('.content-card-main .people
 let peopleSlidesTriggerRight = document.querySelector('.content-card-main .people-arrow.right')
 
 
-if (peopleSlides.length <= 1) {
+if (peopleSlides.length <= 1 && peopleSlides.length) {
     peopleSlidesTriggerLeft.style.display = 'none';
     peopleSlidesTriggerRight.style.display = 'none';
 }

@@ -95,6 +95,20 @@
         <div class="content-wrapper">
             <div class="content">
                 <div class="content-card">
+                  <div class="custom-dropdown card-settings-dropdown">
+                    <button class="custom-dropdown-trigger"><i class="icon-cog"></i></button>
+                    <ul class="custom-dropdown-menu">
+                      <li class="custom-dropdown-menu-item">
+                        <button class="custom-dropdown-menu-item-link">Link 1</button>
+                      </li>
+                      <li class="custom-dropdown-menu-item">
+                        <button class="custom-dropdown-menu-item-link">Link 2</button>
+                      </li>
+                      <li class="custom-dropdown-menu-item">
+                        <button class="custom-dropdown-menu-item-link">Link 3</button>
+                      </li>
+                    </ul>
+                  </div>
                     <div class="content-card-header">
                         <p class="content-card-header-title">Team members</p>
                         <p class="options">
@@ -107,7 +121,7 @@
                             <input type="text" placeholder="Search">
                             <i class="icon-search"></i>
                           </div>
-                          <button class="button button-primary">Invite new members</button>
+                          <button class="button button-primary test-add-person">Invite new members</button>
                         </div>
                     </div>
                     <div class="content-card-main">
@@ -247,6 +261,7 @@
                             <p class="person-info-position">Chief Marketing Of Something</p>
                           </div>
                         </div>
+                        
             
                         <!-- <div class="person">
                           <div class="person-main">
@@ -296,13 +311,14 @@
         })
 
         //PEOPLE GRID
-        let allPeople = document.querySelectorAll('#team-members-grid .people .person');
+        // let allPeople = document.querySelectorAll('#team-members-grid .people .person');
         let peopleContainer = document.querySelector('#team-members-grid .people');
         let card = document.querySelector('#team-members-grid .content-card');
 
 
 
         function peopleGrid() {
+          let allPeople = document.querySelectorAll('#team-members-grid .people .person');
           if(allPeople.length) {
             console.log(allPeople.length)
           let personWidth = allPeople[0].clientWidth;
@@ -318,6 +334,28 @@
 
         peopleGrid();
 
+
+        let addPeople = document.querySelector('.test-add-person');
+        addPeople.addEventListener('click', function() {
+          peopleContainer.innerHTML = `${peopleContainer.innerHTML}                         <div class="person">
+                          <div class="person-main">
+                            <img
+                              src="../public/img/p-03.png"
+                              alt="User's profile image"
+                              class="person-main-img"
+                            />
+                            <div class="person-main-icon">
+                              <span class="ok">OK</span>
+                            </div>
+                          </div>
+                          <div class="person-info">
+                            <p class="person-info-name">John Brown</p>
+                            <p class="person-info-position">Sales Africa</p>
+                          </div>
+                        </div>`
+
+                        peopleGrid();
+        })
 
 
     </script>
