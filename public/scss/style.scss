@@ -113,6 +113,10 @@
   --header-main-height-big: 8.4em;
   --header-main-height-small: 5.4em;
 
+  //PAGE HEADERS
+  --page-header-height-default: 13.2em;
+  --page-header-height-compare: 8.25em;
+
   //TALBE
   --table-head-row-height: 3.4em;
   --table-body-row-height: 4.6em;
@@ -1177,6 +1181,222 @@ body {
 }
 
 //========================
+//    PAGE HEADER
+//========================
+.page-header {
+  @include flexbox();
+  @include flex-direction(column);
+  @include align-items(flex-start);
+  @include justify-content(flex-start);
+  height: var(--page-header-height-default);
+  width: 100%;
+  background-color: #fff;
+  z-index: 800;
+
+  & .header-buttons {
+    position: absolute;
+    top: var(--padding-top);
+    right: var(--padding-right);
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &-info {
+    @include inline-flex();
+    @include align-items(center);
+    @include justify-content(center);
+
+    &-img {
+      margin-right: 1.3em;
+      width: 5.7em;
+      height: 5.7em;
+      border-radius: 50%;
+      border: solid 1px #f0f0f0;
+    }
+
+    &-icon {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      margin-right: 1.3em;
+      width: 5.7em;
+      height: 5.7em;
+      border-radius: 50%;
+      border: solid 1px #f7f7f7;
+      background-color: var(--color-primary);
+
+      & i {
+        font-size: 3.59em;
+        color: #fff;
+      }
+    }
+
+    &-initials {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      margin-right: emcalc(1.3, 3);
+      width: emcalc(5.7, 3);
+      height: emcalc(5.7, 3);
+      border-radius: 50%;
+      border: solid 1px #f7f7f7;
+      background-color: #fed745;
+      font-size: 3em;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    &-name {
+      margin-bottom: emcalc(0.75, 2.2);
+      font-size: 2.4em;
+      font-weight: 400;
+      letter-spacing: -0.12px;
+      color: #172b4d;
+
+      &-strong {
+        font-weight: 500;
+      }
+    }
+
+    &-position {
+      padding-left: 1px;
+      font-size: 1.3em;
+      font-weight: 400;
+      color: #62677b;
+
+      &-strong {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &-subtitle {
+    padding-bottom: emcalc(0.6, 1.325);
+    font-size: 1.325em;
+    font-weight: 400;
+    letter-spacing: -0.14px;
+    color: #6b778c;
+  }
+
+  &-title {
+    font-size: 2.4em;
+    font-weight: 500;
+    color: #172b4d;
+  }
+
+  &-list {
+    width: 100%;
+    margin-top: auto;
+    padding-left: 1.25em;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(flex-start);
+    list-style: none;
+    border-bottom: 1.5px solid #ebecf0;
+
+    & .give-feedback-button {
+      margin-top: -2em;
+      margin-left: auto;
+
+      & .button {
+        padding: 0 emcalc(1.6, 1.3);
+        height: emcalc(3, 1.33);
+        border-radius: 15px;
+        font-size: 1.33em;
+      }
+    }
+
+    &-item {
+      &:not(:last-of-type) {
+        margin-right: 3.1em;
+      }
+
+      &:first-of-type {
+        & .page-header-list-item-link {
+          &::after {
+            content: "";
+            width: 122%;
+            transform: translate(0, 100%);
+            left: -1.25rem;
+            //display: none;
+          }
+        }
+      }
+
+      &-link {
+        position: relative;
+        padding-bottom: emcalc(1.6, 1.33);
+        font-size: 1.33em;
+        font-weight: 400;
+        color: #344562;
+        cursor: pointer;
+
+        &.active {
+          font-weight: 600;
+          color: #19232e;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            display: block;
+            width: 128%;
+            transform: translate(-50%, 100%);
+            border-bottom: 1.5px solid #7c7c7c;
+          }
+        }
+
+        &:hover:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          display: block;
+          width: 128%;
+          transform: translate(-50%, 100%);
+          border-bottom: 1.5px solid #7c7c7c;
+        }
+
+        &:hover {
+          color: #19232e;
+        }
+      }
+
+      &-notification {
+        margin-left: emcalc(0.45, 1.18);
+        @include inline-flex();
+        @include align-items(center);
+        @include justify-content(center);
+        width: emcalc(1.9, 1.18);
+        height: emcalc(1.6, 1.18);
+        border-radius: 8px;
+        background-color: #dfe1e6;
+        font-size: 1.18em;
+        font-weight: 500;
+        letter-spacing: -0.06px;
+        color: #172b4d;
+        transform: translate(0, -0.5rem);
+      }
+    }
+  }
+
+  &-compare {
+    height: var(--page-header-height-compare);
+    border-bottom: 1.5px solid #ebecf0;
+
+    & .page-header-info-position {
+      & button {
+        font-weight: 500;
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//========================
 //    CUSTOM DROPDOWN
 //========================
 .custom-dropdown {
@@ -1709,6 +1929,61 @@ body {
   }
 }
 
+//TABLE PLACEHOLDER
+.table-placeholder {
+  width: 100%;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+
+  & td {
+    width: 100%;
+    padding: 3.9em 3em 4.6em;
+    text-align: center;
+  }
+
+  &-img {
+    margin-bottom: 2.1em;
+    width: 5.69em;
+    object-fit: contain;
+  }
+
+  &-title {
+    margin-bottom: emcalc(1.2, 1.5);
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: -0.38px;
+    color: #2c3952;
+  }
+
+  &-text {
+    font-size: 1.28em;
+    font-weight: 400;
+    letter-spacing: -0.13px;
+    color: #383838;
+
+    & button {
+      font-weight: 500;
+      color: #167efa;
+      text-decoration: underline;
+    }
+  }
+
+  &.no-results {
+    & td {
+      padding-top: 4.4em;
+      padding-bottom: 3.9em;
+    }
+    & .table-placeholder-img {
+      width: 5.8em;
+    }
+
+    & .table-placeholder-title {
+      margin-bottom: 0;
+    }
+  }
+}
+
 //==============================
 //          CUSTOM MODAL
 //==============================
@@ -2073,10 +2348,10 @@ body {
   }
 
   &.success {
-    //@at-root: visible !important;
     & .custom-modal-body {
       padding: 0 !important;
     }
+
     & .custom-modal-footer {
       & .button-primary {
         display: none;
@@ -2086,6 +2361,7 @@ body {
         @include inline-flex();
       }
     }
+
     & .success-message {
       @include flexbox();
     }
@@ -2101,6 +2377,25 @@ body {
 }
 
 //SPECIFIC MOODAL MODIFIERS
+//modal card
+#modalCard {
+  position: absolute;
+  height: calc(100% - 4em);
+  margin-top: 1.6em;
+  margin-bottom: 2.4em;
+
+  & .custom-modal {
+    & .page-header {
+      height: 16.6em;
+      padding: 3.2em 4.9em 0;
+    }
+
+    width: 100%;
+    height: 100%;
+    animation: none;
+  }
+}
+
 //feedback modals
 #peerToPeerFeedbackModal,
 #teamFeedbackModal,
@@ -2629,7 +2924,7 @@ body {
           overflow: hidden;
           text-overflow: ellipsis;
           &-name {
-            margin-bottom: emcalc(0.3, 1.28);
+            margin-bottom: emcalc(0.4, 1.28);
             font-size: 1.28em;
             font-weight: 400;
             letter-spacing: -0.03px;
@@ -3450,6 +3745,9 @@ body {
 // ======================================================================================================================================
 #example-page {
   & .content {
+    &-wrapper {
+      position: relative;
+    }
     &-card {
       width: auto;
       margin: 1.6em 4em;
@@ -4338,12 +4636,41 @@ body {
     &-card {
       max-width: 100%;
 
+      & .card-settings-dropdown {
+        position: absolute;
+        top: 2.1em;
+        right: 2.9em;
+        z-index: 200;
+
+        & .custom-dropdown-trigger {
+          font-size: 2em;
+          color: #5c6f83;
+        }
+      }
+
       &-header {
+        &-title {
+          font-size: 1.75em;
+          margin-bottom: emcalc(1.2, 1.75);
+        }
+        & .options {
+          margin-bottom: 1.6em;
+
+          &-link {
+            font-size: 1.35em;
+          }
+
+          &-divider {
+            margin-right: 0.5em;
+          }
+        }
         &-bottom {
+          margin-bottom: 1.6em;
           @include justify-content(flex-start);
 
           & .content-card-input-container {
             margin-right: 1.6em;
+            max-width: 32.6em;
             height: 3.4em;
           }
 
@@ -4406,9 +4733,13 @@ body {
           &-body {
             border: 0;
             & .custom-table-row {
-              height: 6em;
+              height: 5.8em;
               border: 0;
               border-bottom: 1.25px solid #ededed;
+
+              &:first-of-type {
+                height: 6.4em;
+              }
             }
           }
 
@@ -4668,7 +4999,7 @@ body {
       & .card-settings-dropdown {
         position: absolute;
         top: 2.1em;
-        right: 2.9em;
+        right: 0;
         z-index: 200;
 
         & .custom-dropdown-trigger {
