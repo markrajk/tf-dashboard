@@ -3796,6 +3796,330 @@ body {
         #company-settings-general .content-card-main .settings-table-row .delete-company:hover {
           text-decoration: underline; }
 
+#give-feedback .content {
+  background-color: #fff;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */ }
+  #give-feedback .content::-webkit-scrollbar {
+    /* WebKit */
+    width: 0;
+    height: 0; }
+  #give-feedback .content-wrapper {
+    height: 100%; }
+  #give-feedback .content-card {
+    padding: 6em 9em;
+    padding-top: 6.4em;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none; }
+    #give-feedback .content-card .caption-title {
+      margin-bottom: 1.1em;
+      font-size: 2em;
+      font-weight: 600;
+      color: #172b4d; }
+    #give-feedback .content-card .caption-bottom {
+      padding-bottom: 2.2em;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      justify-content: space-between;
+      border-bottom: 1.5px solid #f0f0f0;
+      white-space: nowrap; }
+      #give-feedback .content-card .caption-bottom .input-container {
+        margin-right: 2em;
+        position: relative;
+        width: 100%;
+        max-width: 44.5em; }
+        #give-feedback .content-card .caption-bottom .input-container input {
+          padding-left: 2.3776223776em;
+          height: 2.5174825175em;
+          width: 100%;
+          font-size: 1.43em;
+          font-weight: 400;
+          color: #767d8b;
+          border-radius: 3px;
+          border: solid 1.5px #dfe1e6; }
+        #give-feedback .content-card .caption-bottom .input-container i {
+          position: absolute;
+          top: 50%;
+          left: 1.5rem;
+          transform: translate(0, -50%);
+          font-size: 1.25em;
+          color: #9ba3b2; }
+      #give-feedback .content-card .caption-bottom .buttons .button {
+        padding: 0 1.2592592593em;
+        height: 2.6666666667em;
+        font-size: 1.35em;
+        font-weight: 400;
+        letter-spacing: -0.07px;
+        color: #3e424a; }
+        #give-feedback .content-card .caption-bottom .buttons .button:not(:last-of-type) {
+          margin-right: 0.8888888889em; }
+    #give-feedback .content-card .todo {
+      margin-bottom: 6.5em;
+      width: 100%;
+      max-width: 40em; }
+      #give-feedback .content-card .todo-list {
+        margin-left: 0.3em;
+        width: 100%; }
+        #give-feedback .content-card .todo-list-item {
+          position: relative;
+          padding-left: 1.2em;
+          padding-right: 3.8em;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          -moz-align-items: center;
+          align-items: center;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          -webkit-justify-content: flex-start;
+          -moz-justify-content: flex-start;
+          justify-content: flex-start;
+          height: 6.4em;
+          cursor: pointer;
+          z-index: 100; }
+          #give-feedback .content-card .todo-list-item:first-of-type {
+            border-top: 1.5px solid #f0f0f0; }
+          #give-feedback .content-card .todo-list-item::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            border-bottom: 1.5px solid #f0f0f0;
+            z-index: -2; }
+          #give-feedback .content-card .todo-list-item-icon {
+            margin-right: 0.496em;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            justify-content: center;
+            width: 1.6em;
+            height: 1.6em;
+            background-color: #007aff;
+            border-radius: 50%;
+            font-size: 2.5em;
+            color: #fff; }
+          #give-feedback .content-card .todo-list-item-img {
+            margin-right: 1.24em;
+            width: 4em;
+            height: 4em;
+            border-radius: 50%; }
+          #give-feedback .content-card .todo-list-item-initials {
+            margin-right: 0.8266666667em;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            justify-content: center;
+            width: 2.6666666667em;
+            height: 2.6666666667em;
+            background-color: #fed745;
+            border-radius: 50%;
+            font-size: 1.5em;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #fff; }
+          #give-feedback .content-card .todo-list-item-info-subtitle {
+            margin-bottom: 0.2654867257em;
+            font-size: 1.13em;
+            font-weight: 500;
+            letter-spacing: -0.06px;
+            color: #7c7c7c; }
+          #give-feedback .content-card .todo-list-item-info-title {
+            font-size: 1.6em;
+            font-weight: 500;
+            letter-spacing: -0.16px;
+            color: #242936; }
+          #give-feedback .content-card .todo-list-item .icon-chevron-right {
+            margin-left: auto;
+            font-size: 1.32em;
+            color: #bbbac1; }
+          #give-feedback .content-card .todo-list-item:hover:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            width: calc(100% + 0.6em);
+            height: calc(100% + 3px);
+            border-radius: 5px;
+            border: solid 1.5px #f0f0f0;
+            background-color: #f7f7f7;
+            z-index: -1; }
+    #give-feedback .content-card .people {
+      padding: 0 1em;
+      padding-top: 4.2em;
+      width: 100%;
+      max-width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      align-items: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      justify-content: flex-start;
+      overflow: hidden;
+      transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out; }
+      @media (max-width: 767px) {
+        #give-feedback .content-card .people {
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          -moz-justify-content: center;
+          justify-content: center; } }
+      #give-feedback .content-card .people .person {
+        width: 15.5em;
+        margin-bottom: 3.8em;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -moz-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center; }
+        #give-feedback .content-card .people .person-main {
+          margin-bottom: 1em;
+          position: relative; }
+          #give-feedback .content-card .people .person-main-img {
+            width: 8em;
+            height: 8em;
+            object-fit: contain;
+            border-radius: 16px; }
+          #give-feedback .content-card .people .person-main-icon {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2.8em;
+            height: 2.8em;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+            border: solid 1px #f5f5f5;
+            background-color: #ffffff;
+            border-radius: 50%;
+            transform: translate(51%, -47%); }
+            #give-feedback .content-card .people .person-main-icon .icon-thumbs-up {
+              font-size: 1.56em;
+              color: #00be20; }
+            #give-feedback .content-card .people .person-main-icon .icon-exclamation-circle {
+              font-size: 1.56em;
+              color: #f52600; }
+            #give-feedback .content-card .people .person-main-icon .ok {
+              font-size: 1.2em;
+              font-weight: 700;
+              letter-spacing: -0.24px;
+              color: #ff8900; }
+        #give-feedback .content-card .people .person-info {
+          width: 12em;
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+          #give-feedback .content-card .people .person-info-name {
+            margin-bottom: 0.16em;
+            font-size: 1.25em;
+            font-weight: 500;
+            color: #172b4d;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+          #give-feedback .content-card .people .person-info-position {
+            padding: 0 1em;
+            font-size: 1.15em;
+            font-weight: 400;
+            letter-spacing: -0.03px;
+            color: #7a869a;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+
 #team-members-grid .content {
   padding: 1.6em 4em;
   height: 100%; }
