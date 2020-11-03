@@ -357,13 +357,13 @@
 
 
         //PEOPLE GRID
-        let peopleContainer = document.querySelector('#team-members-grid .people');
-        let card = document.querySelector('#team-members-grid .content-card');
+        let peopleContainer = document.querySelector('#give-feedback .people');
+        let card = document.querySelector('#give-feedback .content-card');
 
 
 
         function peopleGrid() {
-          let allPeople = document.querySelectorAll('#team-members-grid .people .person');
+          let allPeople = document.querySelectorAll('#give-feedback .people .person');
           if(allPeople.length) {
             console.log(allPeople.length)
           let personWidth = allPeople[0].clientWidth;
@@ -372,7 +372,7 @@
           if(card.clientWidth > (allPeople.length * personWidth * 2) || allPeople.length <= 8) {
             peopleContainer.style.maxWidth = `100%`;
           }else {
-            peopleContainer.style.width = `${Math.ceil(allPeople.length / 2) * (personWidth / rem)}em`;
+            peopleContainer.style.width = `${Math.ceil(allPeople.length / 2) * (personWidth / rem) + 2}em`;
           }
         }
         }
