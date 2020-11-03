@@ -5534,6 +5534,7 @@ body {
     }
 
     .widget {
+      position: relative;
       width: 100%;
       height: 42.5em;
       border-radius: 6px;
@@ -5542,13 +5543,13 @@ body {
       background-color: #ffffff;
 
       &-header {
-        padding: 2em;
-        padding-right: 5em;
-        position: relative;
+        padding: 2em 0;
+        margin: 0 4.7em;
         text-align: center;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        border-bottom: solid 1.5px #e2e4e9;
 
         &-title {
           margin-bottom: emcalc(0.7, 1.43);
@@ -5587,6 +5588,99 @@ body {
           }
         }
       }
+
+      &-body {
+        padding: 0 2em 3em;
+        height: calc(100% - 7.9em);
+      }
+    }
+  }
+}
+
+.bar-graph {
+  padding-left: 12.5em;
+  padding-right: 8.4em;
+  padding-bottom: 3em;
+  padding-top: 2em;
+  height: 100%;
+
+  &-main {
+    position: relative;
+    height: 100%;
+    z-index: 100;
+    border-left: 1px solid #43546a;
+
+    &-item {
+      //margin-left: -1px;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(flex-end);
+      position: relative;
+      height: 2em;
+      width: 100%;
+      background-color: #07487f;
+      z-index: -50;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1em;
+      }
+
+      &-label {
+        position: absolute;
+        top: 50%;
+        left: -0.9rem;
+        transform: translate(-100%, -50%);
+        font-size: 1.18em;
+        font-weight: 400;
+        letter-spacing: -0.18px;
+        color: var(--color-dark-gray);
+      }
+
+      &-amount {
+        margin-right: emcalc(0.74, 1.18);
+        font-size: 1.18em;
+        font-weight: 500;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+
+    &-x {
+      height: 100%;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(space-between);
+
+      &-line {
+        height: 100%;
+        border-right: 1px solid #e2e4e9;
+      }
+    }
+  }
+
+  &-x-axis {
+    position: absolute;
+    left: 50%;
+    bottom: -1em;
+    transform: translate(-50%, 100%);
+    width: 112%;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(space-between);
+
+    &-item {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: -0.15px;
+      color: var(--color-dark-gray);
     }
   }
 }
