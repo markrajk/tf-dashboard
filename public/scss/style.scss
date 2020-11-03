@@ -3565,6 +3565,17 @@ body {
           display: block;
         }
       }
+
+      & .add-new-widgets {
+        margin-left: auto;
+
+        & button {
+          font-size: 1.25em;
+          font-weight: 600;
+          text-align: right;
+          color: var(--color-dark-gray);
+        }
+      }
     }
   }
 
@@ -5188,7 +5199,6 @@ body {
       }
 
       & .people {
-        //margin: 0 -1em;
         padding: 0 1em;
         padding-top: 4.2em;
         width: 100%;
@@ -5476,6 +5486,103 @@ body {
                 overflow: hidden;
                 text-overflow: ellipsis;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//=================================================================
+//                      WIDGETS
+//=================================================================
+#widgets {
+  & .content {
+    margin: 0 2em;
+
+    //========================
+    //        WIDGETS
+    //========================
+    .widgets {
+      height: auto;
+      width: 100%;
+      max-width: 100%;
+      padding-top: 2em;
+      @include flexbox();
+      @include flex-wrap(wrap);
+      @include align-items(flex-start);
+      @include justify-content(flex-start);
+    }
+
+    .widget-wrapper {
+      margin: 0 2em;
+      margin-bottom: 2em;
+      resize: horizontal;
+      overflow: auto;
+      flex-shrink: 1;
+
+      &.small {
+        width: calc(50% - 4em);
+        max-width: 100%;
+      }
+
+      &.big {
+        width: calc(100%);
+        max-width: 100%;
+      }
+    }
+
+    .widget {
+      width: 100%;
+      height: 42.5em;
+      border-radius: 6px;
+      box-shadow: 0 3px 6px 0 rgba(226, 226, 226, 0.11);
+      border: solid 1px #e4e8ec;
+      background-color: #ffffff;
+
+      &-header {
+        padding: 2em;
+        padding-right: 5em;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &-title {
+          margin-bottom: emcalc(0.7, 1.43);
+          font-size: 1.43em;
+          font-weight: 600;
+          color: #19212f;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &-text {
+          font-size: 1.23em;
+          font-weight: 400;
+          letter-spacing: -0.09px;
+          color: #435365;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &-icons {
+          margin-left: 2em;
+          position: absolute;
+          top: 1.45em;
+          right: 1.7em;
+
+          & i {
+            display: block;
+            font-size: 2.25em;
+            color: #424c5d;
+
+            &:not(:last-of-type) {
+              margin-bottom: emcalc(0.55, 2.25);
             }
           }
         }
